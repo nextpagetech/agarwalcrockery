@@ -45,7 +45,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Progressive reveal
   const revealItems = [...document.querySelectorAll('.reveal')];
   if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver((entries) => {
@@ -61,7 +60,6 @@ document.addEventListener('DOMContentLoaded', () => {
     revealItems.forEach((item) => item.classList.add('show'));
   }
 
-  // Category spotlight on home
   const categoryControls = [...document.querySelectorAll('[data-category-control]')];
   const categoryStageImage = document.querySelector('#categoryStageImage');
   const categoryStageTitle = document.querySelector('#categoryStageTitle');
@@ -88,7 +86,6 @@ document.addEventListener('DOMContentLoaded', () => {
     button.addEventListener('mouseenter', () => activateCategory(button));
   });
 
-  // Industry image switcher
   const industryButtons = [...document.querySelectorAll('[data-industry]')];
   const industryImage = document.querySelector('#industryImage');
   const industryCopy = document.querySelector('#industryCopy');
@@ -110,10 +107,10 @@ document.addEventListener('DOMContentLoaded', () => {
     button.addEventListener('click', () => activateIndustry(button));
   });
 
-  // Wishlist
   document.querySelectorAll('.wish-btn').forEach((button) => {
     button.addEventListener('click', (event) => {
       event.preventDefault();
+      event.stopPropagation();
       button.classList.toggle('active');
       const icon = button.querySelector('i');
       icon?.classList.toggle('bi-heart');
@@ -121,7 +118,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Shop state
   const productCards = [...document.querySelectorAll('.product-wrap')];
   const categoryButtons = [...document.querySelectorAll('.shop-category[data-filter]')];
   const filterLinks = [...document.querySelectorAll('[data-filter-link]')];
@@ -201,11 +197,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Quick view
   const quickModalElement = document.querySelector('#quickViewModal');
   const quickModal = quickModalElement && window.bootstrap ? new bootstrap.Modal(quickModalElement) : null;
   document.querySelectorAll('[data-quick-view]').forEach((button) => {
-    button.addEventListener('click', () => {
+    button.addEventListener('click', (event) => {
+      event.stopPropagation();
       const title = document.querySelector('#quickTitle');
       const copy = document.querySelector('#quickCopy');
       const image = document.querySelector('#quickImage');
@@ -218,13 +214,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Cart behaviour
   let cartCount = 0;
   const cartCountNodes = [...document.querySelectorAll('[data-cart-count]')];
   const cartItemsNode = document.querySelector('[data-cart-items]');
   const toastElement = document.querySelector('#cartToast');
   const cartToast = toastElement && window.bootstrap ? bootstrap.Toast.getOrCreateInstance(toastElement, { delay: 1800 }) : null;
-
   const updateCartCount = () => cartCountNodes.forEach((node) => { node.textContent = cartCount; });
   const getProductName = (button) => {
     const article = button.closest('[data-product-name], .product-wrap');
@@ -232,7 +226,8 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   document.querySelectorAll('[data-add]').forEach((button) => {
-    button.addEventListener('click', () => {
+    button.addEventListener('click', (event) => {
+      event.stopPropagation();
       cartCount += 1;
       updateCartCount();
       const title = getProductName(button);
@@ -252,4 +247,40 @@ document.addEventListener('DOMContentLoaded', () => {
       cartToast?.show();
     });
   });
+
+  // Connect the homepage and catalogue to the complete prototype journey.
+  document.querySelectorAll('.header-icon[aria-label="Account"]').forEach((link) => {
+    if (link.tagName === 'A') link.href = 'login.html';
+  });
+
+  document.querySelectorAll('.merch-info a, .catalogue-copy h3, .catalogue-media > img').forEach((node) => {
+    if (node.tagName === 'A') {
+      if (!node.getAttribute('href') || node.getAttribute('href') === '#') node.href = 'product.html';
+    } else {
+      node.style.cursor = 'pointer';
+      node.addEventListener('click', (event) => {
+        if (event.target.closest('button')) return;
+        window.location.href = 'product.html';
+      });
+    }
+  });
+
+  document.querySelectorAll('.site-footer a, .mobile-menu a').forEach((link) => {
+    const label = link.textContent.trim().toLowerCase();
+    if (label === 'my orders') link.href = 'orders.html';
+  });
+
+  const mobileBody = document.querySelector('#mobileMenu .offcanvas-body');
+  if (mobileBody && !mobileBody.querySelector('[data-commerce-mobile-links]')) {
+    const commerceLinks = document.createElement('div');
+    commerceLinks.dataset.commerceMobileLinks = 'true';
+    commerceLinks.innerHTML = '<hr><a href="login.html">Login / Register</a><a href="cart.html">Order Basket</a><a href="orders.html">My Orders</a>';
+    mobileBody.appendChild(commerceLinks);
+  }
+
+  const cartDrawerButton = document.querySelector('#cartDrawer .button-solid.w-100');
+  if (cartDrawerButton) {
+    cartDrawerButton.textContent = 'Review Order Basket';
+    cartDrawerButton.addEventListener('click', () => { window.location.href = 'cart.html'; });
+  }
 });
