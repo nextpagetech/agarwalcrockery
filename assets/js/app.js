@@ -1,42 +1,10 @@
-(() => {
-  const refinementHref = 'assets/css/refinements.css';
-  if (!document.querySelector(`link[href="${refinementHref}"]`)) {
-    const link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.href = refinementHref;
-    document.head.appendChild(link);
-  }
-})();
-
 document.addEventListener('DOMContentLoaded', () => {
-  // Refined sticky header behaviour
-  const siteHeader = document.querySelector('.site-header');
-  const syncHeader = () => siteHeader?.classList.toggle('is-scrolled', window.scrollY > 36);
-  syncHeader();
-  window.addEventListener('scroll', syncHeader, { passive: true });
+  const header = document.querySelector('#siteHeader');
+  const updateHeader = () => header?.classList.toggle('scrolled', window.scrollY > 18);
+  updateHeader();
+  window.addEventListener('scroll', updateHeader, { passive: true });
 
-  // Modern editorial footer intro shared by home and shop
-  const footerContainer = document.querySelector('.site-footer > .container');
-  if (footerContainer && !footerContainer.querySelector('.footer-editorial-head')) {
-    const footerIntro = document.createElement('div');
-    footerIntro.className = 'footer-editorial-head';
-    footerIntro.innerHTML = `
-      <div>
-        <span class="footer-kicker">Built for hospitality businesses</span>
-        <h2>One product or the whole kitchen.</h2>
-      </div>
-      <div>
-        <p>Browse equipment, crockery and hospitality essentials, or speak with the team when you are planning a complete commercial kitchen.</p>
-        <div class="footer-editorial-actions">
-          <a class="footer-primary-action" href="shop.html">Shop products <i class="bi bi-arrow-up-right"></i></a>
-          <a class="footer-secondary-action" href="index.html#contact">Discuss a project <i class="bi bi-arrow-right"></i></a>
-        </div>
-      </div>`;
-    footerContainer.prepend(footerIntro);
-  }
-
-  // Scroll reveal
-  const revealItems = [...document.querySelectorAll('.reveal')];
+  const reveals = [...document.querySelectorAll('.reveal')];
   if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -45,24 +13,23 @@ document.addEventListener('DOMContentLoaded', () => {
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.1 });
-    revealItems.forEach((item) => observer.observe(item));
+    }, { threshold: 0.08 });
+    reveals.forEach((item) => observer.observe(item));
   } else {
-    revealItems.forEach((item) => item.classList.add('show'));
+    reveals.forEach((item) => item.classList.add('show'));
   }
 
-  // Wishlist interaction
-  document.querySelectorAll('.wishlist-btn').forEach((button) => {
+  document.querySelectorAll('.heart-btn').forEach((button) => {
     button.addEventListener('click', (event) => {
       event.preventDefault();
       button.classList.toggle('active');
       const icon = button.querySelector('i');
-      icon?.classList.toggle('bi-heart');
-      icon?.classList.toggle('bi-heart-fill');
+      if (!icon) return;
+      icon.classList.toggle('bi-heart');
+      icon.classList.toggle('bi-heart-fill');
     });
   });
 
-  // Home featured product tabs
   const homeTabs = [...document.querySelectorAll('[data-home-filter]')];
   const homeProducts = [...document.querySelectorAll('[data-home-product]')];
   homeTabs.forEach((tab) => {
@@ -76,35 +43,28 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Shop filters, search and sorting
   const productCards = [...document.querySelectorAll('.product-wrap')];
   const resultCount = document.querySelector('#resultCount');
   const emptyState = document.querySelector('#emptyState');
   const desktopSearch = document.querySelector('#productSearch');
   const mobileSearch = document.querySelector('#productSearchMobile');
-  const shopCategoryButtons = [...document.querySelectorAll('.shop-category-card[data-filter]')];
+  const categoryButtons = [...document.querySelectorAll('.shop-cat-v4[data-filter]')];
   const categoryRadios = [...document.querySelectorAll('input[type="radio"][value]')];
   const filterLinks = [...document.querySelectorAll('[data-filter-link]')];
   const sortSelect = document.querySelector('#sortProducts');
   const grid = document.querySelector('#productGrid');
+
   let activeCategory = 'all';
   let searchTerm = '';
 
-  const setActiveCategory = (category) => {
-    activeCategory = category || 'all';
-    shopCategoryButtons.forEach((button) => button.classList.toggle('active', button.dataset.filter === activeCategory));
-    categoryRadios.forEach((radio) => { radio.checked = radio.value === activeCategory; });
-    applyShopFilters();
-  };
-
-  const applyShopFilters = () => {
+  const applyFilters = () => {
     if (!productCards.length) return;
     let visible = 0;
     productCards.forEach((card) => {
       const text = (card.dataset.product || '').toLowerCase();
-      const matchesCategory = activeCategory === 'all' || card.dataset.category === activeCategory;
-      const matchesSearch = !searchTerm || text.includes(searchTerm);
-      const show = matchesCategory && matchesSearch;
+      const categoryMatch = activeCategory === 'all' || card.dataset.category === activeCategory;
+      const searchMatch = !searchTerm || text.includes(searchTerm);
+      const show = categoryMatch && searchMatch;
       card.classList.toggle('d-none', !show);
       if (show) visible += 1;
     });
@@ -112,44 +72,50 @@ document.addEventListener('DOMContentLoaded', () => {
     emptyState?.classList.toggle('d-none', visible !== 0);
   };
 
-  shopCategoryButtons.forEach((button) => button.addEventListener('click', () => setActiveCategory(button.dataset.filter)));
-  categoryRadios.forEach((radio) => radio.addEventListener('change', () => { if (radio.checked) setActiveCategory(radio.value); }));
+  const setCategory = (category) => {
+    activeCategory = category || 'all';
+    categoryButtons.forEach((button) => button.classList.toggle('active', button.dataset.filter === activeCategory));
+    categoryRadios.forEach((radio) => { radio.checked = radio.value === activeCategory; });
+    applyFilters();
+  };
+
+  categoryButtons.forEach((button) => button.addEventListener('click', () => setCategory(button.dataset.filter)));
+  categoryRadios.forEach((radio) => radio.addEventListener('change', () => { if (radio.checked) setCategory(radio.value); }));
   filterLinks.forEach((link) => link.addEventListener('click', (event) => {
     if (!productCards.length) return;
     event.preventDefault();
-    setActiveCategory(link.dataset.filterLink);
-    window.scrollTo({ top: document.querySelector('.shop-catalog')?.offsetTop - 100 || 0, behavior: 'smooth' });
+    setCategory(link.dataset.filterLink || 'all');
+    document.querySelector('.shop-catalog-v4')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }));
 
   const syncSearch = (value, source) => {
     searchTerm = value.trim().toLowerCase();
-    if (source !== desktopSearch && desktopSearch) desktopSearch.value = value;
-    if (source !== mobileSearch && mobileSearch) mobileSearch.value = value;
-    applyShopFilters();
+    if (desktopSearch && source !== desktopSearch) desktopSearch.value = value;
+    if (mobileSearch && source !== mobileSearch) mobileSearch.value = value;
+    applyFilters();
   };
+
   desktopSearch?.addEventListener('input', () => syncSearch(desktopSearch.value, desktopSearch));
   mobileSearch?.addEventListener('input', () => syncSearch(mobileSearch.value, mobileSearch));
 
-  sortSelect?.addEventListener('change', () => {
-    if (!grid) return;
-    const products = [...productCards];
-    if (sortSelect.value === 'az') products.sort((a, b) => (a.dataset.name || '').localeCompare(b.dataset.name || ''));
-    if (sortSelect.value === 'za') products.sort((a, b) => (b.dataset.name || '').localeCompare(a.dataset.name || ''));
-    products.forEach((product) => grid.appendChild(product));
-  });
-
   document.querySelector('[data-clear-filters]')?.addEventListener('click', () => {
-    setActiveCategory('all');
+    setCategory('all');
     syncSearch('', null);
   });
 
-  // Read ?cat= from URLs
   if (productCards.length) {
     const categoryFromUrl = new URLSearchParams(window.location.search).get('cat');
-    if (categoryFromUrl) setActiveCategory(categoryFromUrl);
+    if (categoryFromUrl) setCategory(categoryFromUrl);
   }
 
-  // Grid/list view
+  sortSelect?.addEventListener('change', () => {
+    if (!grid) return;
+    const cards = [...productCards];
+    if (sortSelect.value === 'az') cards.sort((a, b) => (a.dataset.name || '').localeCompare(b.dataset.name || ''));
+    if (sortSelect.value === 'za') cards.sort((a, b) => (b.dataset.name || '').localeCompare(a.dataset.name || ''));
+    cards.forEach((card) => grid.appendChild(card));
+  });
+
   document.querySelectorAll('[data-view]').forEach((button) => {
     button.addEventListener('click', () => {
       document.querySelectorAll('[data-view]').forEach((item) => item.classList.remove('active'));
@@ -158,9 +124,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Quick view modal
-  const quickViewModalElement = document.querySelector('#quickViewModal');
-  const quickViewModal = quickViewModalElement && window.bootstrap ? new bootstrap.Modal(quickViewModalElement) : null;
+  const quickViewElement = document.querySelector('#quickViewModal');
+  const quickViewModal = quickViewElement && window.bootstrap ? new bootstrap.Modal(quickViewElement) : null;
   document.querySelectorAll('[data-quick-view]').forEach((button) => {
     button.addEventListener('click', () => {
       const title = document.querySelector('#quickTitle');
@@ -173,35 +138,34 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Cart interaction
   let cartCount = 0;
   const cartCountNodes = [...document.querySelectorAll('[data-cart-count]')];
-  const cartItemsNode = document.querySelector('[data-cart-items]');
+  const cartItems = document.querySelector('[data-cart-items]');
   const toastElement = document.querySelector('#cartToast');
-  const cartToast = toastElement && window.bootstrap ? bootstrap.Toast.getOrCreateInstance(toastElement, { delay: 1800 }) : null;
+  const toast = toastElement && window.bootstrap ? bootstrap.Toast.getOrCreateInstance(toastElement, { delay: 1700 }) : null;
 
   const updateCartCount = () => cartCountNodes.forEach((node) => { node.textContent = cartCount; });
-  const getProductTitle = (button) => button.closest('article')?.querySelector('h3')?.textContent || document.querySelector('#quickTitle')?.textContent || 'Selected product';
+  const getProductName = (button) => button.closest('article')?.querySelector('h3')?.textContent || document.querySelector('#quickTitle')?.textContent || 'Selected product';
 
   document.querySelectorAll('[data-add]').forEach((button) => {
     button.addEventListener('click', () => {
       cartCount += 1;
       updateCartCount();
-      const title = getProductTitle(button);
-      if (cartItemsNode) {
-        if (cartCount === 1) cartItemsNode.innerHTML = '';
+      const name = getProductName(button);
+      if (cartItems) {
+        if (cartCount === 1) cartItems.innerHTML = '';
         const item = document.createElement('div');
-        item.className = 'cart-item';
-        item.innerHTML = `<div class="cart-item-image"><i class="bi bi-box"></i></div><div><strong>${title}</strong><small>Qty 1 · Price after review</small></div>`;
-        cartItemsNode.appendChild(item);
+        item.className = 'cart-item-v4';
+        item.innerHTML = `<span><i class="bi bi-box"></i></span><div><strong>${name}</strong><small>Qty 1 · Price after review</small></div>`;
+        cartItems.appendChild(item);
       }
       const icon = button.querySelector('i');
       if (icon) {
         const previous = icon.className;
         icon.className = 'bi bi-check2';
-        setTimeout(() => { icon.className = previous; }, 1200);
+        setTimeout(() => { icon.className = previous; }, 1100);
       }
-      cartToast?.show();
+      toast?.show();
     });
   });
 });
