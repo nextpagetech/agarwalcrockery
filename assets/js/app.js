@@ -60,6 +60,97 @@ document.addEventListener('DOMContentLoaded', () => {
     revealItems.forEach((item) => item.classList.add('show'));
   }
 
+  /*
+   * Visual guard for the prototype.
+   * Keep the site focused on crockery, tableware, glassware and commercial
+   * kitchen environments. Do not use plated food / dish photography as a
+   * substitute for product or industry imagery.
+   */
+  const visualAssets = {
+    commercialKitchen: 'https://images.unsplash.com/photo-1671656200343-d2a322492223?auto=format&fit=crop&w=1800&q=88',
+    kitchenTableware: 'https://images.unsplash.com/photo-1746343365753-5ddd9f7f3994?auto=format&fit=crop&w=1600&q=86',
+    crockery: 'https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=1400&q=86',
+    ceramics: 'https://images.unsplash.com/photo-1610701596007-11502861dcfa?auto=format&fit=crop&w=1400&q=86',
+    glassware: 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=1400&q=86',
+    restaurantInterior: 'https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=1600&q=86'
+  };
+
+  const setImage = (selector, src, alt) => {
+    const image = document.querySelector(selector);
+    if (!image) return;
+    image.src = src;
+    if (alt) image.alt = alt;
+  };
+
+  setImage('.hero-art-main img', visualAssets.commercialKitchen, 'Professional commercial kitchen equipment');
+  setImage('.hero-art-secondary img', visualAssets.crockery, 'Hospitality crockery and tableware');
+  setImage('.hero-art-detail img', visualAssets.glassware, 'Hospitality glassware');
+  setImage('.mega-feature img', visualAssets.commercialKitchen, 'Commercial kitchen equipment');
+  setImage('.project-feature-media img', visualAssets.commercialKitchen, 'Complete commercial kitchen project');
+
+  const categoryVisuals = {
+    equipment: visualAssets.commercialKitchen,
+    crockery: visualAssets.crockery,
+    glassware: visualAssets.glassware,
+    catering: visualAssets.kitchenTableware
+  };
+
+  document.querySelectorAll('[data-category-control]').forEach((button) => {
+    const link = button.dataset.link || '';
+    const match = link.match(/cat=([^&]+)/);
+    const key = match?.[1];
+    if (key && categoryVisuals[key]) button.dataset.image = categoryVisuals[key];
+  });
+  setImage('#categoryStageImage', visualAssets.commercialKitchen, 'Commercial kitchen equipment');
+
+  const industryVisuals = [
+    visualAssets.restaurantInterior,
+    visualAssets.glassware,
+    visualAssets.crockery,
+    visualAssets.commercialKitchen
+  ];
+  document.querySelectorAll('[data-industry]').forEach((button, index) => {
+    button.dataset.image = industryVisuals[index] || visualAssets.kitchenTableware;
+  });
+  setImage('#industryImage', visualAssets.restaurantInterior, 'Restaurant tableware and interior');
+
+  document.querySelectorAll('.shop-category[data-filter]').forEach((button) => {
+    const key = button.dataset.filter;
+    const image = button.querySelector('img');
+    if (!image) return;
+    if (key === 'all') image.src = visualAssets.crockery;
+    else if (categoryVisuals[key]) image.src = categoryVisuals[key];
+  });
+
+  const homeProductVisuals = {
+    '40 L Planetary Mixer': visualAssets.commercialKitchen,
+    '6 Burner Gas Range': visualAssets.kitchenTableware,
+    'Restaurant Dinnerware': visualAssets.crockery,
+    'Hospitality Glass Collection': visualAssets.glassware,
+    'Buffet Chafing Set': visualAssets.restaurantInterior
+  };
+  document.querySelectorAll('.merch-card[data-product-name]').forEach((card) => {
+    const src = homeProductVisuals[card.dataset.productName] || visualAssets.crockery;
+    const image = card.querySelector('.merch-media img');
+    if (image) image.src = src;
+  });
+
+  const shopCategoryCounters = {};
+  document.querySelectorAll('.product-wrap').forEach((card) => {
+    const category = card.dataset.category || 'crockery';
+    const position = shopCategoryCounters[category] || 0;
+    shopCategoryCounters[category] = position + 1;
+    let src = visualAssets.crockery;
+    if (category === 'equipment') src = position % 2 ? visualAssets.kitchenTableware : visualAssets.commercialKitchen;
+    if (category === 'crockery') src = position % 2 ? visualAssets.ceramics : visualAssets.crockery;
+    if (category === 'glassware') src = visualAssets.glassware;
+    if (category === 'catering') src = position % 2 ? visualAssets.crockery : visualAssets.restaurantInterior;
+    const image = card.querySelector('.catalogue-media > img');
+    if (image) image.src = src;
+    const quick = card.querySelector('[data-quick-view]');
+    if (quick) quick.dataset.image = src;
+  });
+
   const categoryControls = [...document.querySelectorAll('[data-category-control]')];
   const categoryStageImage = document.querySelector('#categoryStageImage');
   const categoryStageTitle = document.querySelector('#categoryStageTitle');
@@ -248,7 +339,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Connect the homepage and catalogue to the complete prototype journey.
   document.querySelectorAll('.header-icon[aria-label="Account"]').forEach((link) => {
     if (link.tagName === 'A') link.href = 'login.html';
   });
