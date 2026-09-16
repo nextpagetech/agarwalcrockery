@@ -1,4 +1,40 @@
+(() => {
+  const refinementHref = 'assets/css/refinements.css';
+  if (!document.querySelector(`link[href="${refinementHref}"]`)) {
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = refinementHref;
+    document.head.appendChild(link);
+  }
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
+  // Refined sticky header behaviour
+  const siteHeader = document.querySelector('.site-header');
+  const syncHeader = () => siteHeader?.classList.toggle('is-scrolled', window.scrollY > 36);
+  syncHeader();
+  window.addEventListener('scroll', syncHeader, { passive: true });
+
+  // Modern editorial footer intro shared by home and shop
+  const footerContainer = document.querySelector('.site-footer > .container');
+  if (footerContainer && !footerContainer.querySelector('.footer-editorial-head')) {
+    const footerIntro = document.createElement('div');
+    footerIntro.className = 'footer-editorial-head';
+    footerIntro.innerHTML = `
+      <div>
+        <span class="footer-kicker">Built for hospitality businesses</span>
+        <h2>One product or the whole kitchen.</h2>
+      </div>
+      <div>
+        <p>Browse equipment, crockery and hospitality essentials, or speak with the team when you are planning a complete commercial kitchen.</p>
+        <div class="footer-editorial-actions">
+          <a class="footer-primary-action" href="shop.html">Shop products <i class="bi bi-arrow-up-right"></i></a>
+          <a class="footer-secondary-action" href="index.html#contact">Discuss a project <i class="bi bi-arrow-right"></i></a>
+        </div>
+      </div>`;
+    footerContainer.prepend(footerIntro);
+  }
+
   // Scroll reveal
   const revealItems = [...document.querySelectorAll('.reveal')];
   if ('IntersectionObserver' in window) {
