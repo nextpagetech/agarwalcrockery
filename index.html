@@ -3,115 +3,193 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Agarwal Crockery House | Commercial Kitchen Equipment & Hospitality Supply</title>
-  <meta name="description" content="Shop commercial kitchen equipment, crockery, glassware, catering and hospitality products. Private pricing for business orders and complete kitchen project support.">
+  <title>Agarwal Crockery House | Commercial Kitchen Equipment & Hospitality Solutions</title>
+  <meta name="description" content="Commercial kitchen equipment, crockery, glassware and complete hospitality solutions for restaurants, hotels, cafes and institutions.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
   <div class="announcement-bar">
-    <div class="container d-flex align-items-center justify-content-center justify-content-lg-between gap-3">
-      <span><i class="bi bi-buildings me-2"></i>Commercial kitchen equipment & hospitality supply for businesses</span>
-      <span class="d-none d-lg-inline">Prices are shared after order review <i class="bi bi-arrow-right-short"></i></span>
+    <div class="container announcement-inner">
+      <span>Commercial kitchen & hospitality supply for businesses</span>
+      <span class="d-none d-md-inline"><i class="bi bi-lock me-1"></i>Prices are shared privately after order review</span>
     </div>
   </div>
 
-  <header class="site-header sticky-top">
-    <div class="container header-main">
-      <a class="brand" href="index.html" aria-label="Agarwal Crockery House"><img src="assets/img/logo.svg" alt="Agarwal Crockery House" class="brand-logo"></a>
-      <form class="header-search d-none d-xl-flex" action="shop.html"><i class="bi bi-search"></i><input type="search" placeholder="Search mixers, crockery, glassware..." aria-label="Search products"><button type="submit">Search</button></form>
-      <div class="header-actions">
-        <a class="header-action d-none d-md-flex" href="#contact"><i class="bi bi-chat-square-text"></i><span>Project<br><b>Enquiry</b></span></a>
-        <a class="icon-action" href="#" aria-label="Account"><i class="bi bi-person"></i></a>
-        <button class="icon-action position-relative" type="button" data-bs-toggle="offcanvas" data-bs-target="#cartDrawer" aria-label="Cart"><i class="bi bi-bag"></i><span class="cart-count" data-cart-count>0</span></button>
-        <button class="icon-action d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-label="Menu"><i class="bi bi-list"></i></button>
+  <header class="site-header sticky-top" id="siteHeader">
+    <div class="container header-row">
+      <a class="brand" href="index.html" aria-label="Agarwal Crockery House"><img src="assets/img/logo.svg" alt="Agarwal Crockery House"></a>
+      <nav class="desktop-nav d-none d-lg-flex">
+        <a href="shop.html" class="nav-strong">Shop</a>
+        <a href="#industries">Industries</a>
+        <a href="#projects">Kitchen Projects</a>
+        <a href="#why">Why Agarwal</a>
+      </nav>
+      <div class="header-tools">
+        <a href="shop.html" class="header-search-trigger d-none d-md-flex"><i class="bi bi-search"></i><span>Search products</span></a>
+        <a href="#" class="header-icon" aria-label="Account"><i class="bi bi-person"></i></a>
+        <button class="header-icon cart-trigger" type="button" data-bs-toggle="offcanvas" data-bs-target="#cartDrawer" aria-label="Cart"><i class="bi bi-bag"></i><span data-cart-count>0</span></button>
+        <button class="header-icon d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-label="Menu"><i class="bi bi-list"></i></button>
       </div>
     </div>
-    <div class="category-nav d-none d-lg-block">
-      <div class="container d-flex align-items-center justify-content-between">
-        <nav class="d-flex align-items-center">
-          <a class="nav-shop" href="shop.html"><i class="bi bi-grid-3x3-gap me-2"></i>Shop All</a>
-          <a href="shop.html?cat=equipment">Kitchen Equipment</a><a href="shop.html?cat=crockery">Crockery</a><a href="shop.html?cat=glassware">Glassware</a><a href="shop.html?cat=catering">Catering</a><a href="#industries">Industries</a><a href="#solutions">Kitchen Projects</a>
-        </nav>
-        <a class="nav-link-light" href="#about">About Agarwal</a>
+    <div class="category-line d-none d-lg-block">
+      <div class="container category-line-inner">
+        <a href="shop.html?cat=equipment">Kitchen Equipment</a>
+        <a href="shop.html?cat=crockery">Crockery</a>
+        <a href="shop.html?cat=glassware">Glassware</a>
+        <a href="shop.html?cat=catering">Catering & Buffet</a>
+        <a href="shop.html">Service & Display</a>
+        <a href="#contact" class="category-cta">Discuss a requirement <i class="bi bi-arrow-up-right"></i></a>
       </div>
     </div>
   </header>
 
   <main>
-    <section class="commerce-hero">
+    <section class="hero-v4">
       <div class="container">
-        <div class="hero-grid">
-          <div class="hero-copy-panel reveal">
-            <span class="micro-label">Built for restaurants, hotels & institutions</span>
-            <h1>Everything for a professional kitchen, <span>in one place.</span></h1>
-            <p>Explore commercial equipment, crockery, glassware and hospitality essentials — or speak to our team for a complete kitchen requirement.</p>
-            <div class="hero-ctas"><a href="shop.html" class="btn-modern btn-red">Shop Products <i class="bi bi-arrow-up-right"></i></a><a href="#contact" class="btn-modern btn-white">Plan a Kitchen Project</a></div>
-            <div class="hero-search d-xl-none mt-4"><i class="bi bi-search"></i><input type="text" placeholder="What are you looking for?" onclick="location.href='shop.html'"></div>
-            <div class="hero-trust-row">
-              <div><i class="bi bi-box-seam"></i><span><b>Wide range</b><small>Equipment to tableware</small></span></div>
-              <div><i class="bi bi-buildings"></i><span><b>B2B focused</b><small>Hotels to institutions</small></span></div>
-              <div><i class="bi bi-credit-card"></i><span><b>Private pricing</b><small>Pay after approval</small></span></div>
+        <div class="hero-layout">
+          <div class="hero-copy reveal">
+            <span class="eyebrow">For restaurants, hotels, cafes & institutions</span>
+            <h1>One place for the products <em>and</em> the complete kitchen.</h1>
+            <p>Shop individual equipment, crockery and hospitality essentials — or work with our team on a complete commercial kitchen requirement.</p>
+            <div class="hero-actions">
+              <a href="shop.html" class="btn-primary-v4">Explore Products <i class="bi bi-arrow-right"></i></a>
+              <a href="#contact" class="btn-link-v4">Discuss a Kitchen Project <i class="bi bi-arrow-up-right"></i></a>
+            </div>
+            <div class="hero-proof">
+              <div><strong>Product buyers</strong><span>Search, compare, shortlist and order</span></div>
+              <div><strong>Project buyers</strong><span>Plan the full kitchen requirement</span></div>
             </div>
           </div>
-          <div class="hero-visual-panel reveal">
-            <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1400&q=88" alt="Professional commercial kitchen">
-            <div class="hero-image-shade"></div>
-            <div class="hero-floating-card hero-card-top"><span class="tiny">FOR DIRECT BUYERS</span><strong>Know exactly what you need?</strong><a href="shop.html">Browse the catalogue <i class="bi bi-arrow-right"></i></a></div>
-            <div class="hero-floating-card hero-card-bottom"><span class="tiny">FOR NEW PROJECTS</span><strong>Opening a restaurant or hotel?</strong><a href="#contact">Discuss the full requirement <i class="bi bi-arrow-right"></i></a></div>
+          <div class="hero-media reveal">
+            <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1600&q=88" alt="Modern commercial kitchen">
+            <div class="hero-media-overlay"></div>
+            <a href="shop.html" class="hero-route hero-route-top"><span>01</span><div><small>KNOW WHAT YOU NEED?</small><b>Go straight to products</b></div><i class="bi bi-arrow-up-right"></i></a>
+            <a href="#contact" class="hero-route hero-route-bottom"><span>02</span><div><small>OPENING A NEW SPACE?</small><b>Plan the complete setup</b></div><i class="bi bi-arrow-up-right"></i></a>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="category-section section-space">
+    <section class="trust-ribbon">
+      <div class="container trust-ribbon-inner">
+        <div><i class="bi bi-box-seam"></i><span><b>Wide Hospitality Range</b><small>Equipment to table service</small></span></div>
+        <div><i class="bi bi-buildings"></i><span><b>B2B Focus</b><small>For business & institutional buying</small></span></div>
+        <div><i class="bi bi-receipt"></i><span><b>Formal Ordering</b><small>Order history, pricing & payment records</small></span></div>
+        <div><i class="bi bi-tools"></i><span><b>Project Support</b><small>From requirement to installation</small></span></div>
+      </div>
+    </section>
+
+    <section class="section-v4 category-showcase">
       <div class="container">
-        <div class="section-heading-row reveal"><div><span class="micro-label">Shop by category</span><h2>Start with what you need.</h2></div><a href="shop.html" class="text-link">View all products <i class="bi bi-arrow-right"></i></a></div>
-        <div class="category-bento">
-          <a class="bento-card bento-large reveal" href="shop.html?cat=equipment"><img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1200&q=84" alt="Commercial kitchen equipment"><div class="bento-overlay"></div><div class="bento-content"><span>01</span><h3>Commercial Kitchen Equipment</h3><p>Cooking, preparation, refrigeration & washing</p><i class="bi bi-arrow-up-right"></i></div></a>
-          <a class="bento-card reveal" href="shop.html?cat=crockery"><img src="https://images.unsplash.com/photo-1610701596007-11502861dcfa?auto=format&fit=crop&w=900&q=84" alt="Crockery"><div class="bento-overlay"></div><div class="bento-content"><span>02</span><h3>Crockery</h3><i class="bi bi-arrow-up-right"></i></div></a>
-          <a class="bento-card reveal" href="shop.html?cat=glassware"><img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=900&q=84" alt="Glassware"><div class="bento-overlay"></div><div class="bento-content"><span>03</span><h3>Glassware & Barware</h3><i class="bi bi-arrow-up-right"></i></div></a>
-          <a class="bento-card reveal" href="shop.html?cat=catering"><img src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=900&q=84" alt="Catering equipment"><div class="bento-overlay"></div><div class="bento-content"><span>04</span><h3>Catering & Buffet</h3><i class="bi bi-arrow-up-right"></i></div></a>
-          <a class="bento-card reveal" href="shop.html"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=900&q=84" alt="Table service"><div class="bento-overlay"></div><div class="bento-content"><span>05</span><h3>Service & Display</h3><i class="bi bi-arrow-up-right"></i></div></a>
+        <div class="section-head reveal">
+          <div><span class="eyebrow">Shop by category</span><h2>Move from need to product, fast.</h2></div>
+          <a href="shop.html" class="section-link">View all products <i class="bi bi-arrow-right"></i></a>
+        </div>
+        <div class="category-grid-v4">
+          <a class="category-feature reveal" href="shop.html?cat=equipment"><img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1200&q=86" alt="Commercial kitchen equipment"><div class="category-shade"></div><div class="category-label"><span>01</span><h3>Commercial Kitchen Equipment</h3><p>Cooking, preparation, refrigeration and washing.</p><i class="bi bi-arrow-up-right"></i></div></a>
+          <a class="category-tile reveal" href="shop.html?cat=crockery"><img src="https://images.unsplash.com/photo-1610701596007-11502861dcfa?auto=format&fit=crop&w=900&q=84" alt="Crockery"><div class="category-shade"></div><div class="category-label"><span>02</span><h3>Crockery</h3><i class="bi bi-arrow-up-right"></i></div></a>
+          <a class="category-tile reveal" href="shop.html?cat=glassware"><img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=900&q=84" alt="Glassware"><div class="category-shade"></div><div class="category-label"><span>03</span><h3>Glassware & Barware</h3><i class="bi bi-arrow-up-right"></i></div></a>
+          <a class="category-tile reveal" href="shop.html?cat=catering"><img src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=900&q=84" alt="Catering"><div class="category-shade"></div><div class="category-label"><span>04</span><h3>Catering & Buffet</h3><i class="bi bi-arrow-up-right"></i></div></a>
+          <a class="category-tile reveal" href="shop.html"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=900&q=84" alt="Service and display"><div class="category-shade"></div><div class="category-label"><span>05</span><h3>Service & Display</h3><i class="bi bi-arrow-up-right"></i></div></a>
         </div>
       </div>
     </section>
 
-    <section class="featured-section section-space pt-0">
+    <section class="section-v4 products-section">
       <div class="container">
-        <div class="section-heading-row reveal"><div><span class="micro-label">Popular right now</span><h2>Business essentials, ready to shortlist.</h2></div><div class="product-tabs"><button class="active" data-home-filter="all">All</button><button data-home-filter="equipment">Equipment</button><button data-home-filter="crockery">Crockery</button><button data-home-filter="glassware">Glassware</button></div></div>
-        <div class="modern-product-grid">
-          <article class="modern-product-card reveal" data-home-product data-category="equipment"><div class="modern-product-image"><img src="https://images.unsplash.com/photo-1574269909862-7e1d70bb8078?auto=format&fit=crop&w=800&q=82" alt="40 L Planetary Mixer"><button class="wishlist-btn" aria-label="Add to wishlist"><i class="bi bi-heart"></i></button><span class="product-badge">Popular</span><button class="quick-add" data-add>Add to cart <i class="bi bi-plus-lg"></i></button></div><div class="modern-product-info"><span>Preparation Equipment</span><h3>40 L Planetary Mixer</h3><p>Heavy-duty mixing for bakeries and commercial kitchens.</p><div class="product-meta"><small>Price after order review</small><a href="#">View details</a></div></div></article>
-          <article class="modern-product-card reveal" data-home-product data-category="equipment"><div class="modern-product-image"><img src="https://images.unsplash.com/photo-1569058242253-92a9c755a0ec?auto=format&fit=crop&w=800&q=82" alt="Six burner range"><button class="wishlist-btn" aria-label="Add to wishlist"><i class="bi bi-heart"></i></button><button class="quick-add" data-add>Add to cart <i class="bi bi-plus-lg"></i></button></div><div class="modern-product-info"><span>Cooking Equipment</span><h3>6 Burner Gas Range</h3><p>High-output cooking line equipment for daily operations.</p><div class="product-meta"><small>Price after order review</small><a href="#">View details</a></div></div></article>
-          <article class="modern-product-card reveal" data-home-product data-category="crockery"><div class="modern-product-image"><img src="https://images.unsplash.com/photo-1610701596007-11502861dcfa?auto=format&fit=crop&w=800&q=82" alt="Restaurant dinnerware"><button class="wishlist-btn" aria-label="Add to wishlist"><i class="bi bi-heart"></i></button><span class="product-badge product-badge-blue">New</span><button class="quick-add" data-add>Add to cart <i class="bi bi-plus-lg"></i></button></div><div class="modern-product-info"><span>Dinnerware</span><h3>Classic Restaurant Dinnerware</h3><p>Durable tableware for restaurant and banquet service.</p><div class="product-meta"><small>Price after order review</small><a href="#">View details</a></div></div></article>
-          <article class="modern-product-card reveal" data-home-product data-category="glassware"><div class="modern-product-image"><img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=800&q=82" alt="Hospitality glassware"><button class="wishlist-btn" aria-label="Add to wishlist"><i class="bi bi-heart"></i></button><button class="quick-add" data-add>Add to cart <i class="bi bi-plus-lg"></i></button></div><div class="modern-product-info"><span>Glassware</span><h3>Hospitality Glass Collection</h3><p>Everyday glassware for high-volume hospitality use.</p><div class="product-meta"><small>Price after order review</small><a href="#">View details</a></div></div></article>
+        <div class="section-head reveal">
+          <div><span class="eyebrow">Popular products</span><h2>Shortlist the essentials.</h2></div>
+          <div class="product-filter-tabs"><button class="active" data-home-filter="all">All</button><button data-home-filter="equipment">Equipment</button><button data-home-filter="crockery">Crockery</button><button data-home-filter="glassware">Glassware</button></div>
+        </div>
+        <div class="product-grid-v4">
+          <article class="product-v4 reveal" data-home-product data-category="equipment"><div class="product-image-v4"><img src="https://images.unsplash.com/photo-1574269909862-7e1d70bb8078?auto=format&fit=crop&w=900&q=84" alt="Planetary mixer"><span class="product-tag">Popular</span><button class="heart-btn" aria-label="Wishlist"><i class="bi bi-heart"></i></button><button class="product-hover-add" data-add>Add to order <i class="bi bi-plus"></i></button></div><div class="product-copy-v4"><span>Preparation Equipment</span><h3>40 L Planetary Mixer</h3><p>Heavy-duty mixing for bakeries and commercial kitchens.</p><div><small>Price after order review</small><a href="#">View details</a></div></div></article>
+          <article class="product-v4 reveal" data-home-product data-category="equipment"><div class="product-image-v4"><img src="https://images.unsplash.com/photo-1569058242253-92a9c755a0ec?auto=format&fit=crop&w=900&q=84" alt="Gas range"><button class="heart-btn" aria-label="Wishlist"><i class="bi bi-heart"></i></button><button class="product-hover-add" data-add>Add to order <i class="bi bi-plus"></i></button></div><div class="product-copy-v4"><span>Cooking Equipment</span><h3>6 Burner Gas Range</h3><p>High-output cooking line equipment for busy kitchens.</p><div><small>Price after order review</small><a href="#">View details</a></div></div></article>
+          <article class="product-v4 reveal" data-home-product data-category="crockery"><div class="product-image-v4"><img src="https://images.unsplash.com/photo-1610701596007-11502861dcfa?auto=format&fit=crop&w=900&q=84" alt="Dinnerware"><span class="product-tag product-tag-blue">New</span><button class="heart-btn" aria-label="Wishlist"><i class="bi bi-heart"></i></button><button class="product-hover-add" data-add>Add to order <i class="bi bi-plus"></i></button></div><div class="product-copy-v4"><span>Dinnerware</span><h3>Restaurant Dinnerware</h3><p>Durable tableware for restaurant and banquet service.</p><div><small>Price after order review</small><a href="#">View details</a></div></div></article>
+          <article class="product-v4 reveal" data-home-product data-category="glassware"><div class="product-image-v4"><img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=900&q=84" alt="Glassware"><button class="heart-btn" aria-label="Wishlist"><i class="bi bi-heart"></i></button><button class="product-hover-add" data-add>Add to order <i class="bi bi-plus"></i></button></div><div class="product-copy-v4"><span>Glassware</span><h3>Hospitality Glass Collection</h3><p>Practical glassware for high-volume hospitality use.</p><div><small>Price after order review</small><a href="#">View details</a></div></div></article>
         </div>
       </div>
     </section>
 
-    <section class="order-flow section-space">
-      <div class="container"><div class="order-flow-panel reveal"><div class="flow-heading"><span class="micro-label light">A different way to buy</span><h2>Select first. Price privately. Pay after review.</h2><p>Your product prices are not displayed publicly. Build your order and our team will confirm the final price in your account.</p><a href="shop.html" class="btn-modern btn-white">Start an order <i class="bi bi-arrow-right"></i></a></div><div class="flow-steps"><div class="flow-step"><span>01</span><i class="bi bi-search"></i><div><b>Browse</b><small>Find products & specs</small></div></div><div class="flow-step"><span>02</span><i class="bi bi-bag-plus"></i><div><b>Place order</b><small>Select quantities</small></div></div><div class="flow-step"><span>03</span><i class="bi bi-receipt"></i><div><b>Price updated</b><small>Admin confirms pricing</small></div></div><div class="flow-step"><span>04</span><i class="bi bi-credit-card"></i><div><b>View & pay</b><small>Pay from My Orders</small></div></div></div></div></div>
+    <section class="pricing-flow section-v4">
+      <div class="container pricing-flow-grid">
+        <div class="pricing-flow-copy reveal"><span class="eyebrow">How ordering works</span><h2>No public prices. No confusion.</h2><p>Select the products you need first. Agarwal reviews the requirement, shares the final price privately, and you pay only after approval.</p><a href="shop.html" class="btn-primary-v4">Start an Order <i class="bi bi-arrow-right"></i></a></div>
+        <div class="pricing-steps reveal">
+          <div class="pricing-step"><span>01</span><div><b>Browse & shortlist</b><small>Search products, specs and categories.</small></div></div>
+          <div class="pricing-step"><span>02</span><div><b>Place the order</b><small>Select products and quantities without upfront payment.</small></div></div>
+          <div class="pricing-step"><span>03</span><div><b>Price is confirmed</b><small>The team reviews your requirement and updates the final price.</small></div></div>
+          <div class="pricing-step"><span>04</span><div><b>View & pay</b><small>Login to My Orders, review the price and complete payment.</small></div></div>
+        </div>
+      </div>
     </section>
 
-    <section class="industry-section section-space" id="industries"><div class="container"><div class="section-heading-row reveal"><div><span class="micro-label">Solutions by industry</span><h2>Tell us what you're building.</h2></div><p class="heading-support">Not every buyer starts with a product name. Start with your business type and explore the right equipment mix.</p></div><div class="industry-scroll"><a href="#" class="industry-tile reveal"><img src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=900&q=82" alt="Restaurant kitchen"><div><span>Restaurants</span><i class="bi bi-arrow-up-right"></i></div></a><a href="#" class="industry-tile reveal"><img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=900&q=82" alt="Hotel"><div><span>Hotels</span><i class="bi bi-arrow-up-right"></i></div></a><a href="#" class="industry-tile reveal"><img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=900&q=82" alt="Cafe"><div><span>Cafes & Bakeries</span><i class="bi bi-arrow-up-right"></i></div></a><a href="#" class="industry-tile reveal"><img src="https://images.unsplash.com/photo-1498654896293-37aacf113fd9?auto=format&fit=crop&w=900&q=82" alt="Institutional cafeteria"><div><span>Institutions</span><i class="bi bi-arrow-up-right"></i></div></a></div></div></section>
+    <section class="section-v4 industries-v4" id="industries">
+      <div class="container">
+        <div class="section-head reveal"><div><span class="eyebrow">Solutions by industry</span><h2>Start with your business, not a product code.</h2></div><p class="section-support">For buyers who know the type of kitchen they are building but need help deciding the equipment mix.</p></div>
+        <div class="industry-rail">
+          <a href="#" class="industry-v4-card reveal"><img src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=900&q=84" alt="Restaurant"><div><span>Restaurants</span><i class="bi bi-arrow-up-right"></i></div></a>
+          <a href="#" class="industry-v4-card reveal"><img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=900&q=84" alt="Hotel"><div><span>Hotels</span><i class="bi bi-arrow-up-right"></i></div></a>
+          <a href="#" class="industry-v4-card reveal"><img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=900&q=84" alt="Cafe"><div><span>Cafes & Bakeries</span><i class="bi bi-arrow-up-right"></i></div></a>
+          <a href="#" class="industry-v4-card reveal"><img src="https://images.unsplash.com/photo-1498654896293-37aacf113fd9?auto=format&fit=crop&w=900&q=84" alt="Institution"><div><span>Institutions</span><i class="bi bi-arrow-up-right"></i></div></a>
+        </div>
+      </div>
+    </section>
 
-    <section class="project-section section-space" id="solutions"><div class="container"><div class="project-panel reveal"><div class="project-image"><img src="https://images.unsplash.com/photo-1516211697506-8360dbcfe9a4?auto=format&fit=crop&w=1300&q=86" alt="Commercial kitchen planning"></div><div class="project-content"><span class="micro-label light">Complete kitchen projects</span><h2>From an empty space to a working kitchen.</h2><p>For new restaurants, hotels, cafeterias and institutional kitchens, Agarwal can support the complete equipment requirement.</p><div class="project-process"><span>Plan</span><i></i><span>Design</span><i></i><span>Supply</span><i></i><span>Install</span></div><a href="#contact" class="btn-modern btn-white">Discuss your project <i class="bi bi-arrow-up-right"></i></a></div></div></div></section>
+    <section class="section-v4 project-v4" id="projects">
+      <div class="container">
+        <div class="project-v4-grid reveal">
+          <div class="project-v4-media"><img src="https://images.unsplash.com/photo-1516211697506-8360dbcfe9a4?auto=format&fit=crop&w=1400&q=86" alt="Commercial kitchen project"></div>
+          <div class="project-v4-copy"><span class="eyebrow light">Complete kitchen projects</span><h2>From an empty space to a working kitchen.</h2><p>For new restaurants, hotels, cafeterias and institutional kitchens, Agarwal can support the complete equipment requirement — not just individual products.</p><div class="project-stages"><span>Plan</span><i></i><span>Design</span><i></i><span>Supply</span><i></i><span>Install</span></div><a href="#contact" class="btn-light-v4">Discuss your project <i class="bi bi-arrow-up-right"></i></a></div>
+        </div>
+      </div>
+    </section>
 
-    <section class="proof-section section-space pt-0" id="about"><div class="container"><div class="proof-grid reveal"><div class="proof-title"><span class="micro-label">Why Agarwal</span><h2>Built for serious hospitality buying.</h2></div><div class="proof-item"><i class="bi bi-tools"></i><b>Commercial kitchen capability</b><p>Support beyond a normal product catalogue.</p></div><div class="proof-item"><i class="bi bi-boxes"></i><b>Wide hospitality range</b><p>Equipment, crockery, glassware and service products.</p></div><div class="proof-item"><i class="bi bi-people"></i><b>Dedicated B2B support</b><p>For direct buyers, procurement teams and new projects.</p></div></div></div></section>
+    <section class="section-v4 buyer-needs" id="why">
+      <div class="container">
+        <div class="section-head reveal"><div><span class="eyebrow">Built for B2B buying</span><h2>Different buyers need different things.</h2></div></div>
+        <div class="buyer-needs-grid">
+          <div class="buyer-need reveal"><span>PROCUREMENT</span><h3>Formal buying, without friction.</h3><p>Product range, specifications, quotation-ready ordering, GST/payment records and clear order history.</p><a href="shop.html">Explore products <i class="bi bi-arrow-right"></i></a></div>
+          <div class="buyer-need reveal"><span>REPEAT CUSTOMERS</span><h3>Reorder without starting again.</h3><p>Login, check previous orders, rebuild a requirement, receive fresh pricing and complete payment.</p><a href="#">My account <i class="bi bi-arrow-right"></i></a></div>
+          <div class="buyer-need reveal"><span>RESEARCH & COMPARISON</span><h3>Compare before you commit.</h3><p>Detailed product information, applications, capacities and downloadable documents where available.</p><a href="shop.html">Browse catalogue <i class="bi bi-arrow-right"></i></a></div>
+        </div>
+      </div>
+    </section>
 
-    <section class="client-section section-space pt-0"><div class="container"><div class="client-strip reveal"><span class="client-caption">Trusted by businesses & institutions</span><div class="client-placeholder">CLIENT LOGO</div><div class="client-placeholder">CLIENT LOGO</div><div class="client-placeholder">CLIENT LOGO</div><div class="client-placeholder">CLIENT LOGO</div><div class="client-placeholder">CLIENT LOGO</div></div></div></section>
+    <section class="client-proof">
+      <div class="container client-proof-inner reveal"><span>Trusted by businesses & institutions</span><div>CLIENT LOGO</div><div>CLIENT LOGO</div><div>CLIENT LOGO</div><div>CLIENT LOGO</div><div>CLIENT LOGO</div></div>
+    </section>
 
-    <section class="closing-section section-space" id="contact"><div class="container"><div class="closing-panel reveal"><div><span class="micro-label light">Two ways to start</span><h2>Know what you need? Shop it.<br>Planning a full setup? Let's talk.</h2></div><div class="closing-actions"><a href="shop.html" class="btn-modern btn-white">Explore Products</a><a href="mailto:info@example.com" class="btn-modern btn-outline-light">Discuss Kitchen Requirement</a></div></div></div></section>
+    <section class="closing-v4" id="contact">
+      <div class="container closing-v4-inner reveal"><div><span class="eyebrow light">Start the right way</span><h2>Buying a product or planning the whole kitchen?</h2></div><div class="closing-v4-actions"><a href="shop.html" class="btn-light-v4">Explore Products</a><a href="mailto:info@example.com" class="btn-outline-v4">Discuss a Project <i class="bi bi-arrow-up-right"></i></a></div></div>
+    </section>
   </main>
 
-  <footer class="site-footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><img src="assets/img/logo.svg" alt="Agarwal Crockery House"><p>Commercial kitchen equipment, crockery and hospitality solutions for businesses.</p></div><div><h5>Shop</h5><a href="shop.html">All Products</a><a href="shop.html?cat=equipment">Kitchen Equipment</a><a href="shop.html?cat=crockery">Crockery</a><a href="shop.html?cat=glassware">Glassware</a></div><div><h5>Solutions</h5><a href="#industries">Restaurants</a><a href="#industries">Hotels</a><a href="#industries">Institutions</a><a href="#solutions">Kitchen Projects</a></div><div><h5>Account</h5><a href="#">My Account</a><a href="#">My Orders</a><a href="#">Payments</a><a href="#">Contact</a></div></div><div class="footer-bottom"><span>© 2026 Agarwal Crockery House</span><div><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Shipping</a><a href="#">Returns</a></div></div></div></footer>
+  <footer class="footer-v4">
+    <div class="container">
+      <div class="footer-top-v4">
+        <div class="footer-brand-v4"><img src="assets/img/logo.svg" alt="Agarwal Crockery House"><p>Commercial kitchen equipment, crockery and hospitality solutions for business buyers.</p></div>
+        <div class="footer-mini-cta"><span>PRIVATE PRICING</span><strong>Build the order first.<br>We confirm the price.</strong><a href="shop.html">Start shopping <i class="bi bi-arrow-right"></i></a></div>
+      </div>
+      <div class="footer-links-v4">
+        <div><h5>Shop</h5><a href="shop.html">All Products</a><a href="shop.html?cat=equipment">Kitchen Equipment</a><a href="shop.html?cat=crockery">Crockery</a><a href="shop.html?cat=glassware">Glassware</a></div>
+        <div><h5>Solutions</h5><a href="#industries">Restaurants</a><a href="#industries">Hotels</a><a href="#industries">Institutions</a><a href="#projects">Kitchen Projects</a></div>
+        <div><h5>Company</h5><a href="#why">Why Agarwal</a><a href="#contact">Contact</a><a href="#">My Account</a><a href="#">My Orders</a></div>
+        <div><h5>Policies</h5><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Shipping</a><a href="#">Returns</a></div>
+      </div>
+      <div class="footer-bottom-v4"><span>© 2026 Agarwal Crockery House</span><span>Built for hospitality businesses</span></div>
+      <div class="footer-wordmark" aria-hidden="true">AGARWAL</div>
+    </div>
+  </footer>
 
-  <div class="offcanvas offcanvas-end cart-drawer" tabindex="-1" id="cartDrawer"><div class="offcanvas-header"><div><small class="text-secondary">YOUR ORDER</small><h5 class="mb-0">Selected products</h5></div><button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button></div><div class="offcanvas-body d-flex flex-column"><div class="cart-items" data-cart-items><div class="empty-cart"><i class="bi bi-bag"></i><p>Your order is empty.</p><a href="shop.html">Explore products</a></div></div><div class="cart-note mt-auto"><i class="bi bi-info-circle"></i><span>Prices will be shared after your order is reviewed.</span></div><a class="btn-modern btn-red w-100 justify-content-center mt-3" href="shop.html">Continue to Shop</a></div></div>
-  <div class="offcanvas offcanvas-start mobile-menu" tabindex="-1" id="mobileMenu"><div class="offcanvas-header"><img src="assets/img/logo.svg" class="mobile-logo" alt="Agarwal"><button class="btn-close" data-bs-dismiss="offcanvas"></button></div><div class="offcanvas-body"><a href="shop.html">Shop All</a><a href="shop.html?cat=equipment">Kitchen Equipment</a><a href="shop.html?cat=crockery">Crockery</a><a href="shop.html?cat=glassware">Glassware</a><a href="shop.html?cat=catering">Catering</a><hr><a href="#industries">Industries</a><a href="#solutions">Kitchen Projects</a><a href="#about">About</a><a href="#contact">Contact</a></div></div>
+  <div class="offcanvas offcanvas-end cart-drawer-v4" tabindex="-1" id="cartDrawer"><div class="offcanvas-header"><div><small>YOUR ORDER</small><h5 class="mb-0">Selected products</h5></div><button class="btn-close" data-bs-dismiss="offcanvas"></button></div><div class="offcanvas-body d-flex flex-column"><div data-cart-items class="cart-items-v4"><div class="empty-cart-v4"><i class="bi bi-bag"></i><p>Your order is empty.</p><a href="shop.html">Explore products</a></div></div><div class="cart-note-v4 mt-auto"><i class="bi bi-info-circle"></i><span>Prices are confirmed after your order is reviewed.</span></div><a href="shop.html" class="btn-primary-v4 w-100 justify-content-center mt-3">Continue to Shop</a></div></div>
+
+  <div class="offcanvas offcanvas-start mobile-menu-v4" tabindex="-1" id="mobileMenu"><div class="offcanvas-header"><img src="assets/img/logo.svg" alt="Agarwal"><button class="btn-close" data-bs-dismiss="offcanvas"></button></div><div class="offcanvas-body"><a href="shop.html">Shop All</a><a href="shop.html?cat=equipment">Kitchen Equipment</a><a href="shop.html?cat=crockery">Crockery</a><a href="shop.html?cat=glassware">Glassware</a><a href="shop.html?cat=catering">Catering</a><hr><a href="#industries">Industries</a><a href="#projects">Kitchen Projects</a><a href="#why">Why Agarwal</a><a href="#contact">Contact</a></div></div>
+
+  <div class="toast-container position-fixed bottom-0 end-0 p-3"><div id="cartToast" class="toast modern-toast" role="alert"><div class="toast-body d-flex align-items-center gap-3"><span><i class="bi bi-check2"></i></span><div><strong>Added to your order</strong><small>Price will be confirmed after review.</small></div></div></div></div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/app.js"></script>
