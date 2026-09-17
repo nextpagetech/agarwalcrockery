@@ -1,14 +1,53 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const premium = document.createElement('link');
-  premium.rel = 'stylesheet';
-  premium.href = 'assets/css/premium-overrides.css';
-  document.head.appendChild(premium);
+  const ensureStylesheet = (href) => {
+    if ([...document.querySelectorAll('link[rel="stylesheet"]')].some((link) => link.getAttribute('href') === href)) return;
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = href;
+    document.head.appendChild(link);
+  };
+
+  ensureStylesheet('assets/css/premium-overrides.css');
+  ensureStylesheet('assets/css/premium-v10.css');
 
   const footer = document.querySelector('.journey-footer');
   if (footer) {
     footer.className = 'premium-footer';
-    footer.innerHTML = `<div class="container premium-footer-top"><div class="premium-footer-top-grid"><div class="premium-footer-brand"><div class="premium-footer-logo"><img src="assets/img/logo.svg" alt="Agarwal Crockery House"></div><div><h3>Professional hospitality buying, made simpler.</h3><p>Shop, submit your requirement, review private pricing and complete payment from one connected account journey.</p></div></div><div class="premium-footer-action"><a href="shop.html"><div><small>CONTINUE SHOPPING</small>Browse the complete catalogue</div><i class="bi bi-arrow-up-right"></i></a></div></div></div><div class="container premium-footer-main"><div class="premium-footer-note"><span>AGARWAL CROCKERY HOUSE</span><p>B2B hospitality supply for restaurants, hotels, cafes, institutions and commercial kitchens.</p><div class="premium-footer-mini"><b>Private Pricing</b><b>Business Orders</b><b>Order History</b></div></div><div class="premium-footer-col"><span>SHOP</span><a href="shop.html">All Products</a><a href="shop.html?cat=crockery">Crockery</a><a href="shop.html?cat=glassware">Glassware</a><a href="shop.html?cat=catering">Buffet & Catering</a></div><div class="premium-footer-col"><span>ACCOUNT</span><a href="login.html">Login</a><a href="register.html">Create Account</a><a href="orders.html">My Orders</a><a href="cart.html">Order Basket</a></div><div class="premium-footer-col"><span>BUSINESS</span><a href="index.html#project">Complete Kitchen Projects</a><a href="checkout.html">Submit an Order</a><a href="order-details.html">Order Details</a><a href="orders.html">Order Support</a></div></div><div class="container premium-footer-bottom"><span>© 2026 Agarwal Crockery House</span><div><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Shipping</a><a href="#">Returns</a></div></div>`;
+    footer.innerHTML = `
+      <div class="container premium-footer-top">
+        <div class="premium-footer-top-grid">
+          <div class="premium-footer-brand">
+            <div class="premium-footer-logo"><img src="assets/img/logo.svg" alt="Agarwal Crockery House"></div>
+            <div>
+              <h3>Your hospitality order, connected from product to payment.</h3>
+              <p>Shop products, submit the requirement, review private pricing and complete payment from one connected Agarwal account journey.</p>
+            </div>
+          </div>
+          <div class="premium-footer-action">
+            <a href="shop.html"><div><small>CONTINUE SOURCING</small>Browse the complete catalogue</div><i class="bi bi-arrow-up-right"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="container premium-footer-main">
+        <div class="premium-footer-note">
+          <span>AGARWAL CROCKERY HOUSE</span>
+          <p>A B2B hospitality store built for restaurants, hotels, cafes, institutions and commercial kitchens.</p>
+          <div class="premium-footer-mini"><b>Private Pricing</b><b>Business Orders</b><b>Order History</b></div>
+        </div>
+        <div class="premium-footer-col"><span>SHOP</span><a href="shop.html">All Products</a><a href="shop.html?cat=crockery">Crockery</a><a href="shop.html?cat=glassware">Glassware</a><a href="shop.html?cat=catering">Buffet & Catering</a><a href="shop.html?cat=equipment">Kitchen Equipment</a></div>
+        <div class="premium-footer-col"><span>ACCOUNT</span><a href="login.html">Login</a><a href="register.html">Create Account</a><a href="orders.html">My Orders</a><a href="cart.html">Order Basket</a></div>
+        <div class="premium-footer-col"><span>BUSINESS</span><a href="index.html#project">Complete Kitchen Projects</a><a href="checkout.html">Submit an Order</a><a href="order-details.html">Order Details</a><a href="orders.html">Order Support</a></div>
+      </div>
+      <div class="container premium-footer-bottom"><span>© 2026 Agarwal Crockery House</span><div><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Shipping</a><a href="#">Returns</a></div></div>`;
   }
+
+  const CART_KEY = 'agarwalPrototypeCartCount';
+  const getCartCount = () => Number(localStorage.getItem(CART_KEY) || 0);
+  const setCartCount = (count) => {
+    localStorage.setItem(CART_KEY, String(Math.max(0, count)));
+    document.querySelectorAll('.journey-icon .count, [data-cart-count]').forEach((node) => { node.textContent = Math.max(0, count); });
+  };
+  setCartCount(getCartCount());
 
   document.querySelectorAll('[data-thumb]').forEach((thumb) => {
     thumb.addEventListener('click', () => {
@@ -21,15 +60,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('[data-qty-control]').forEach((control) => {
     const input = control.querySelector('input');
-    const minus = control.querySelector('[data-qty-minus]');
-    const plus = control.querySelector('[data-qty-plus]');
-    minus?.addEventListener('click', () => {
-      const value = Math.max(1, Number(input?.value || 1) - 1);
-      if (input) input.value = value;
+    control.querySelector('[data-qty-minus]')?.addEventListener('click', () => {
+      if (input) input.value = Math.max(1, Number(input.value || 1) - 1);
     });
-    plus?.addEventListener('click', () => {
-      const value = Number(input?.value || 1) + 1;
-      if (input) input.value = value;
+    control.querySelector('[data-qty-plus]')?.addEventListener('click', () => {
+      if (input) input.value = Number(input.value || 1) + 1;
     });
   });
 
@@ -54,11 +89,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('[data-remove-item]').forEach((button) => {
     button.addEventListener('click', () => {
-      const item = button.closest('.cart-item');
-      item?.remove();
+      button.closest('.cart-item')?.remove();
       const remaining = document.querySelectorAll('.cart-item').length;
       const count = document.querySelector('[data-cart-page-count]');
       if (count) count.textContent = `${remaining} item${remaining === 1 ? '' : 's'}`;
+      setCartCount(Math.max(0, getCartCount() - 1));
     });
   });
 
@@ -75,11 +110,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('[data-add-cart-demo]').forEach((button) => {
     button.addEventListener('click', () => {
-      const old = button.innerHTML;
+      const previous = button.innerHTML;
       button.innerHTML = '<i class="bi bi-check2"></i> Added to order';
       button.disabled = true;
+      setCartCount(getCartCount() + 1);
       setTimeout(() => {
-        button.innerHTML = old;
+        button.innerHTML = previous;
         button.disabled = false;
       }, 1400);
     });
@@ -97,8 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const button = paymentForm.querySelector('button[type="submit"]');
     if (!button) return;
     button.innerHTML = '<i class="bi bi-check2-circle"></i> Payment complete';
-    button.classList.remove('journey-btn');
-    button.classList.add('journey-btn', 'journey-btn-dark');
+    button.classList.add('journey-btn-dark');
     button.disabled = true;
   });
 });
