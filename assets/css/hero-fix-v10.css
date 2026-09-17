@@ -1,0 +1,27 @@
+/* Hero layout hotfix for V10 */
+.hero-side{position:relative;min-width:0}
+.promo-tile{display:block;position:relative;overflow:hidden}
+.promo-copy{left:22px;right:22px;bottom:20px;max-width:calc(100% - 44px)}
+.promo-copy h3{max-width:340px;line-height:1.12;margin:6px 0 10px}
+.promo-link{display:inline-flex;align-items:center;gap:7px;font-size:.74rem;font-weight:800;color:#fff}
+.hero-copy{max-width:680px}
+.hero-copy h1{overflow-wrap:normal;word-break:normal}
+@media (max-width:1399px) and (min-width:992px){
+  .hero-grid{grid-template-columns:minmax(0,1.25fr) minmax(310px,.75fr)}
+  .hero-main{min-height:510px}
+  .hero-copy{padding:50px 46px;max-width:610px}
+  .hero-copy h1{font-size:clamp(3rem,4.35vw,4.25rem);line-height:.98;margin-bottom:16px}
+  .hero-copy p{font-size:.94rem;line-height:1.58;max-width:540px}
+  .hero-ctas{margin-top:22px}
+  .hero-note{max-width:560px;line-height:1.45}
+  .promo-copy h3{font-size:1.32rem}
+}
+@media (max-width:991px){
+  .hero-side{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .promo-tile{min-height:230px}
+}
+@media (max-width:575px){
+  .hero-side{grid-template-columns:1fr}
+  .hero-copy h1{font-size:2.45rem;line-height:1.02}
+  .hero-copy{padding:34px 22px}
+}
