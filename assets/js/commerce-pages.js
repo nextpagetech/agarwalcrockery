@@ -1,4 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
+  const premium = document.createElement('link');
+  premium.rel = 'stylesheet';
+  premium.href = 'assets/css/premium-overrides.css';
+  document.head.appendChild(premium);
+
+  const footer = document.querySelector('.journey-footer');
+  if (footer) {
+    footer.className = 'premium-footer';
+    footer.innerHTML = `<div class="container premium-footer-top"><div class="premium-footer-top-grid"><div class="premium-footer-brand"><div class="premium-footer-logo"><img src="assets/img/logo.svg" alt="Agarwal Crockery House"></div><div><h3>Professional hospitality buying, made simpler.</h3><p>Shop, submit your requirement, review private pricing and complete payment from one connected account journey.</p></div></div><div class="premium-footer-action"><a href="shop.html"><div><small>CONTINUE SHOPPING</small>Browse the complete catalogue</div><i class="bi bi-arrow-up-right"></i></a></div></div></div><div class="container premium-footer-main"><div class="premium-footer-note"><span>AGARWAL CROCKERY HOUSE</span><p>B2B hospitality supply for restaurants, hotels, cafes, institutions and commercial kitchens.</p><div class="premium-footer-mini"><b>Private Pricing</b><b>Business Orders</b><b>Order History</b></div></div><div class="premium-footer-col"><span>SHOP</span><a href="shop.html">All Products</a><a href="shop.html?cat=crockery">Crockery</a><a href="shop.html?cat=glassware">Glassware</a><a href="shop.html?cat=catering">Buffet & Catering</a></div><div class="premium-footer-col"><span>ACCOUNT</span><a href="login.html">Login</a><a href="register.html">Create Account</a><a href="orders.html">My Orders</a><a href="cart.html">Order Basket</a></div><div class="premium-footer-col"><span>BUSINESS</span><a href="index.html#project">Complete Kitchen Projects</a><a href="checkout.html">Submit an Order</a><a href="order-details.html">Order Details</a><a href="orders.html">Order Support</a></div></div><div class="container premium-footer-bottom"><span>© 2026 Agarwal Crockery House</span><div><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Shipping</a><a href="#">Returns</a></div></div>`;
+  }
+
   document.querySelectorAll('[data-thumb]').forEach((thumb) => {
     thumb.addEventListener('click', () => {
       document.querySelectorAll('[data-thumb]').forEach((item) => item.classList.remove('active'));
