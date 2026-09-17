@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   ensureStylesheet('assets/css/premium-overrides.css');
   ensureStylesheet('assets/css/premium-v10.css');
+  ensureStylesheet('assets/css/premium-v11.css');
 
   const footer = document.querySelector('.journey-footer');
   if (footer) {

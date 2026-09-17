@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   ensureStylesheet('assets/css/premium-overrides.css');
   ensureStylesheet('assets/css/premium-v10.css');
   ensureStylesheet('assets/css/hero-fix-v10.css');
+  ensureStylesheet('assets/css/premium-v11.css');
 
   const qs = (selector, context = document) => context.querySelector(selector);
   const qsa = (selector, context = document) => [...context.querySelectorAll(selector)];
@@ -145,6 +146,13 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
       </div>`;
     whySection.replaceWith(buyerSection);
+  }
+
+  // V11 adds one strong signature merchandising section after the curated range.
+  if (homeHero && !document.querySelector('script[src="assets/js/premium-v11.js"]')) {
+    const premiumScript = document.createElement('script');
+    premiumScript.src = 'assets/js/premium-v11.js';
+    document.body.appendChild(premiumScript);
   }
 
   const CART_KEY = 'agarwalPrototypeCartCount';
