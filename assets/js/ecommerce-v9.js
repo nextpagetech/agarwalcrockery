@@ -9,9 +9,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
   ensureStylesheet('assets/css/premium-overrides.css');
   ensureStylesheet('assets/css/premium-v10.css');
+  ensureStylesheet('assets/css/hero-fix-v10.css');
 
   const qs = (selector, context = document) => context.querySelector(selector);
   const qsa = (selector, context = document) => [...context.querySelectorAll(selector)];
+
+  // Repair the hero promo markup. The original HTML used nested anchors inside
+  // promo tiles, which browsers auto-correct differently and can push the promo
+  // copy over the main hero text. Rebuilding this small block guarantees valid DOM.
+  const heroSide = qs('.hero-side');
+  if (heroSide) {
+    heroSide.innerHTML = `
+      <a class="promo-tile" href="shop.html?cat=crockery">
+        <img src="https://images.unsplash.com/photo-1610701596007-11502861dcfa?auto=format&fit=crop&w=1000&q=86" alt="Crockery collection">
+        <div class="promo-copy">
+          <span>CROCKERY</span>
+          <h3>Dinnerware for professional service</h3>
+          <b class="promo-link">Shop crockery <i class="bi bi-arrow-right"></i></b>
+        </div>
+      </a>
+      <a class="promo-tile" href="shop.html?cat=glassware">
+        <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=1000&q=86" alt="Hospitality glassware">
+        <div class="promo-copy">
+          <span>GLASSWARE</span>
+          <h3>Built for everyday hospitality use</h3>
+          <b class="promo-link">Shop glassware <i class="bi bi-arrow-right"></i></b>
+        </div>
+      </a>`;
+  }
 
   const premiumFooterMarkup = `
     <div class="container premium-footer-top">
