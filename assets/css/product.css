@@ -1,0 +1,30 @@
+/* Product detail page */
+.product-detail{max-width:1280px; margin:0 auto; padding:48px 32px 40px; display:grid; grid-template-columns:1fr 1fr; gap:56px;}
+.pd-gallery{border-radius:var(--radius); overflow:hidden; aspect-ratio:1/1; box-shadow:var(--shadow-sm);}
+.pd-gallery img{width:100%; height:100%; object-fit:cover;}
+.pd-info{display:flex; flex-direction:column; padding-top:6px;}
+.pd-cat{font-size:11px; letter-spacing:.1em; color:var(--gold-deep); font-weight:700; text-transform:uppercase; margin-bottom:10px;}
+.pd-info h1{font-size:clamp(26px,3vw,34px); line-height:1.2; margin-bottom:14px;}
+.pd-desc{font-size:14.5px; color:var(--ink-soft); line-height:1.75; margin-bottom:22px; max-width:460px;}
+.pd-price-note{
+  display:flex; align-items:center; gap:12px; background:var(--gold-soft); color:var(--gold-deep);
+  padding:14px 18px; border-radius:14px; font-size:13px; font-weight:600; margin-bottom:26px; max-width:460px;
+}
+.pd-price-note i{font-size:18px; flex-shrink:0;}
+.pd-qty-row{display:flex; align-items:center; gap:16px; margin-bottom:22px;}
+.pd-qty{display:flex; align-items:center; border:1px solid var(--line); border-radius:999px; overflow:hidden;}
+.pd-qty button{width:38px; height:38px; border:0; background:var(--paper); font-size:16px; cursor:pointer; color:var(--ink);}
+.pd-qty button:hover{background:var(--cream-deep);}
+.pd-qty input{width:44px; text-align:center; border:0; font-size:14px; font-family:var(--sans); background:transparent;}
+.pd-actions{display:flex; gap:12px; margin-bottom:30px; flex-wrap:wrap;}
+.pd-specs{border-top:1px solid var(--line); padding-top:22px;}
+.pd-specs dl{display:grid; grid-template-columns:140px 1fr; gap:10px 16px; font-size:13px;}
+.pd-specs dt{color:var(--ink-soft); font-weight:600;}
+.pd-specs dd{margin:0; color:var(--ink);}
+.pd-trust{display:flex; gap:22px; margin-top:26px; flex-wrap:wrap;}
+.pd-trust span{display:flex; align-items:center; gap:8px; font-size:12px; color:var(--ink-soft);}
+.pd-trust i{color:var(--gold-deep); font-size:15px;}
+
+@media (max-width:900px){
+  .product-detail{grid-template-columns:1fr; gap:28px; padding-top:32px;}
+}

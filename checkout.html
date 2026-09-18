@@ -1,19 +1,103 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Submit Order | Agarwal Crockery House</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet"><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"><link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet"><link rel="stylesheet" href="assets/css/styles.css"><link rel="stylesheet" href="assets/css/commerce-pages.css"></head>
-<body class="journey-page">
-<div class="journey-top"><div class="container"><span>Commercial crockery & hospitality supply for businesses</span><span class="d-none d-md-inline">Private pricing · No payment at this stage</span></div></div>
-<header class="journey-header"><div class="container journey-nav"><a class="journey-brand" href="index.html"><img src="assets/img/logo.svg" alt="Agarwal Crockery House"></a><nav class="journey-links"><a href="index.html">Home</a><a href="shop.html">Shop</a><a href="product.html">Product Details</a><a href="orders.html">My Orders</a></nav><div class="journey-actions"><a class="journey-icon" href="login.html" aria-label="Login"><i class="bi bi-person"></i></a><a class="journey-icon" href="cart.html" aria-label="Order basket"><i class="bi bi-bag"></i><span class="count">2</span></a></div></div></header>
-<main class="checkout-shell"><div class="container">
-  <div class="journey-track mb-4"><div class="journey-step done"><span><i class="bi bi-check2"></i></span><div><b>Products Selected</b><small>2 items</small></div></div><div class="journey-step active"><span>2</span><div><b>Order Submitted</b><small>Enter details</small></div></div><div class="journey-step"><span>3</span><div><b>Price Reviewed</b><small>Agarwal confirms price</small></div></div><div class="journey-step"><span>4</span><div><b>Payment</b><small>Pay after approval</small></div></div></div>
-  <div class="checkout-grid">
-    <form class="checkout-main" data-checkout-form>
-      <span class="section-mini-title">Order details</span><h1>Where should we send and confirm this order?</h1>
-      <section class="form-section"><div class="form-section-title"><span>01</span><div><h2>Contact details</h2><p>We use these details to confirm your requirement and pricing.</p></div></div><div class="form-grid"><div class="form-group"><label>Full name</label><input class="form-control-modern" required placeholder="Your name"></div><div class="form-group"><label>Mobile number</label><input class="form-control-modern" required placeholder="Phone number"></div><div class="form-group"><label>Email address</label><input class="form-control-modern" type="email" required placeholder="Email"></div><div class="form-group"><label>Company / Business name <span class="text-muted">(optional)</span></label><input class="form-control-modern" placeholder="Business name"></div></div></section>
-      <section class="form-section"><div class="form-section-title"><span>02</span><div><h2>Delivery details</h2><p>Share the location for this requirement.</p></div></div><div class="form-grid"><div class="form-group full"><label>Address</label><input class="form-control-modern" required placeholder="Building, street, area"></div><div class="form-group"><label>City</label><input class="form-control-modern" required value="Hyderabad"></div><div class="form-group"><label>PIN code</label><input class="form-control-modern" required placeholder="PIN code"></div><div class="form-group"><label>State</label><input class="form-control-modern" value="Telangana"></div><div class="form-group"><label>GSTIN <span class="text-muted">(optional)</span></label><input class="form-control-modern" placeholder="GST number"></div></div></section>
-      <section class="form-section"><div class="form-section-title"><span>03</span><div><h2>Requirement notes</h2><p>Add quantity, collection preference, packing, delivery timing or any business-specific requirement.</p></div></div><div class="form-group"><textarea class="form-control-modern textarea" placeholder="Tell us anything useful about this crockery requirement."></textarea></div><label class="check-row mt-3"><input type="checkbox" required><span>I confirm the quantities and details above. I understand the final product price and applicable charges will be shared after Agarwal reviews the order.</span></label></section>
-    </form>
-    <aside class="checkout-aside"><div class="order-mini-list"><h3>Your requirement</h3><a class="order-mini" href="product.html"><img src="https://images.pexels.com/photos/6611480/pexels-photo-6611480.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Premium porcelain dinner set"><div><b>Premium Porcelain Dinner Set</b><small>Qty 1 · Private price</small></div></a><a class="order-mini" href="product.html"><img src="https://images.pexels.com/photos/28271468/pexels-photo-28271468.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Commercial serve bowl set"><div><b>Commercial Serve Bowl Set</b><small>Qty 2 · Private price</small></div></a></div><div class="checkout-submit"><div class="summary-row"><span>Product total</span><b>Pending review</b></div><div class="summary-row"><span>Delivery / GST</span><b>Confirmed later</b></div><p><i class="bi bi-lock me-1"></i> No payment is collected now. After review, the final amount appears in My Orders.</p><button class="journey-btn" type="button" onclick="document.querySelector('[data-checkout-form]').requestSubmit()">Submit Order for Review <i class="bi bi-arrow-right"></i></button><a href="cart.html" class="journey-btn-ghost mt-3">Back to order basket</a></div></aside>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Checkout | Agarwal Crockery House</title>
+<link rel="icon" href="assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="stylesheet" href="assets/css/cart.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-row">
+    <a class="logo-mark" href="index.html"><img src="assets/img/logo.png" alt="Agarwal Crockery House"></a>
+    <div class="header-actions" style="margin-left:auto;">
+      <a class="icon-link" href="cart.html"><i class="bi bi-bag"></i><span class="label">Cart</span><span class="count" data-cart-count>0</span></a>
+    </div>
   </div>
-</div></main>
-<footer class="journey-footer"><div class="container journey-footer-main"><div class="journey-footer-brand"><img src="assets/img/logo.svg" alt="Agarwal"><p>Commercial crockery, tableware and hospitality supply for professional buyers.</p></div><div><h4>Shop</h4><a href="shop.html">All Products</a><a href="product.html">Product Details</a><a href="cart.html">Order Basket</a><a href="checkout.html">Submit Order</a></div><div><h4>Account</h4><a href="login.html">Login</a><a href="register.html">Register</a><a href="orders.html">My Orders</a></div><div><h4>Order</h4><a href="order-details.html">Order Details</a><a href="payment.html">Payment</a><a href="index.html#contact">Contact Team</a></div></div><div class="container journey-footer-bottom"><span>© Agarwal Crockery House</span><span>Privacy · Terms · Shipping · Returns</span></div></footer>
-<script src="assets/js/commerce-pages.js"></script></body></html>
+</header>
+
+<div class="checkout-steps">
+  <span>Cart</span><i class="bi bi-chevron-right"></i>
+  <span class="active">Checkout</span><i class="bi bi-chevron-right"></i>
+  <span>Order Placed</span><i class="bi bi-chevron-right"></i>
+  <span>Price Review</span>
+</div>
+
+<div class="page-hero" style="border-bottom:0; background:transparent; padding-bottom:0;">
+  <div class="container">
+    <div>
+      <h1>Checkout</h1>
+      <p>Confirm your delivery details and place your order. Pricing will be shared in your account after our team's review.</p>
+    </div>
+  </div>
+</div>
+
+<main>
+  <div class="cart-layout">
+    <div class="checkout-form">
+      <h3>Delivery Details</h3>
+      <form id="checkoutForm">
+        <div class="field-row">
+          <div class="field">
+            <label for="ckName">Full Name</label>
+            <input type="text" id="ckName" placeholder="Your full name" required>
+          </div>
+          <div class="field">
+            <label for="ckPhone">Phone Number</label>
+            <input type="tel" id="ckPhone" placeholder="+91 98765 43210" required>
+          </div>
+        </div>
+        <div class="field">
+          <label for="ckAddress">Delivery Address</label>
+          <textarea id="ckAddress" rows="3" placeholder="House no., street, locality" required></textarea>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="ckCity">City</label>
+            <input type="text" id="ckCity" placeholder="City" required>
+          </div>
+          <div class="field">
+            <label for="ckPin">PIN Code</label>
+            <input type="text" id="ckPin" placeholder="110001" required>
+          </div>
+        </div>
+        <div class="field">
+          <label for="ckNotes">Order Notes (optional)</label>
+          <textarea id="ckNotes" rows="2" placeholder="Any special instructions for your order"></textarea>
+        </div>
+        <div class="summary-note"><i class="bi bi-lock"></i> No payment is collected at this step. Submitting places your order for review — you'll see the confirmed price under "My Orders."</div>
+        <button type="submit" class="btn btn-dark btn-block">Submit Order for Review <i class="bi bi-arrow-right"></i></button>
+      </form>
+    </div>
+
+    <aside class="summary-card">
+      <h3>Order Review — <span id="checkoutItemCount">0 items</span></h3>
+      <div id="checkoutReview"></div>
+    </aside>
+  </div>
+</main>
+
+<footer class="site-footer" style="padding-top:36px;">
+  <div class="footer-bottom" style="border-top:1px solid rgba(255,255,255,.08); padding-top:22px;">
+    <span>© 2026 Agarwal Crockery House. All rights reserved.</span>
+    <div class="policies">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/products.js"></script>
+<script src="assets/js/site.js"></script>
+<script src="assets/js/checkout.js"></script>
+</body>
+</html>

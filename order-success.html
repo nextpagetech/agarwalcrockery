@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Order Details | Agarwal Crockery House</title>
+<title>Order Placed | Agarwal Crockery House</title>
 <link rel="icon" href="assets/img/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,25 +24,26 @@
   </div>
 </header>
 
-<div class="page-hero">
-  <div class="container">
-    <div>
-      <div class="breadcrumb"><a href="index.html">Home</a> / <a href="orders.html">My Orders</a> / Order Details</div>
-      <h1>Order <span id="odId"></span></h1>
-      <p>Placed on <span id="odDate"></span></p>
-    </div>
-  </div>
-</div>
-
 <main>
-  <div class="order-detail-wrap" id="orderDetailWrap">
-    <div class="order-detail-head">
-      <div>
-        <span class="status-pill" id="odStatus"></span>
-      </div>
+  <div class="success-wrap">
+    <div class="success-icon"><i class="bi bi-check-lg"></i></div>
+    <h1>Your order has been placed!</h1>
+    <p>Thank you for shopping with Agarwal Crockery House. Our team will review your order and confirm the price shortly.</p>
+    <div class="success-order-id"><i class="bi bi-receipt"></i> Order <span id="orderIdLabel">ACH-00000</span></div>
+
+    <div class="success-steps">
+      <div><i class="bi bi-check-circle-fill" style="color:var(--success);"></i>Order Placed</div>
+      <div><i class="bi bi-hourglass-split"></i>Admin Review</div>
+      <div><i class="bi bi-eye"></i>Price in Account</div>
+      <div><i class="bi bi-credit-card"></i>Pay Online</div>
     </div>
-    <div class="cart-items" id="odItems"></div>
-    <div class="order-price-panel" id="odPricePanel"></div>
+
+    <p style="font-size:13px;">You can track your order status any time from <b>My Orders</b>. We'll notify you once your price is ready.</p>
+
+    <div class="success-actions">
+      <a class="btn btn-dark" href="orders.html">View My Orders <i class="bi bi-arrow-right"></i></a>
+      <a class="btn btn-outline" href="shop.html">Continue Shopping</a>
+    </div>
   </div>
 </main>
 
@@ -52,13 +53,18 @@
     <div class="policies">
       <a href="index.html">Home</a>
       <a href="shop.html">Shop</a>
-      <a href="orders.html">My Orders</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
     </div>
   </div>
 </footer>
 
 <script src="assets/js/products.js"></script>
 <script src="assets/js/site.js"></script>
-<script src="assets/js/order-details.js"></script>
+<script>
+  var params = new URLSearchParams(window.location.search);
+  var orderId = params.get('order');
+  if (orderId) document.getElementById('orderIdLabel').textContent = orderId;
+</script>
 </body>
 </html>

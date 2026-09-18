@@ -1,14 +1,89 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Payment | Agarwal Crockery House</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet"><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"><link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet"><link rel="stylesheet" href="assets/css/styles.css"><link rel="stylesheet" href="assets/css/commerce-pages.css"></head>
-<body class="journey-page">
-<div class="journey-top"><div class="container"><span>Secure payment for reviewed order #AG-2048</span><span class="d-none d-md-inline">Final reviewed amount · ₹1,41,600</span></div></div>
-<header class="journey-header"><div class="container journey-nav"><a class="journey-brand" href="index.html"><img src="assets/img/logo.svg" alt="Agarwal Crockery House"></a><nav class="journey-links"><a href="index.html">Home</a><a href="shop.html">Shop</a><a href="product.html">Product Details</a><a href="orders.html" class="active">My Orders</a></nav><div class="journey-actions"><a class="journey-icon" href="login.html"><i class="bi bi-person"></i></a><a class="journey-icon" href="cart.html"><i class="bi bi-bag"></i></a></div></div></header>
-<main class="payment-shell"><div class="container">
-  <div class="journey-track mb-5"><div class="journey-step done"><span><i class="bi bi-check2"></i></span><div><b>Products Selected</b><small>Completed</small></div></div><div class="journey-step done"><span><i class="bi bi-check2"></i></span><div><b>Order Submitted</b><small>Completed</small></div></div><div class="journey-step done"><span><i class="bi bi-check2"></i></span><div><b>Price Reviewed</b><small>₹1,41,600 confirmed</small></div></div><div class="journey-step active"><span>4</span><div><b>Payment</b><small>Complete securely</small></div></div></div>
-  <div class="payment-grid">
-    <section class="payment-main"><span class="section-mini-title">Final step</span><h1>Complete your payment.</h1><p>You are paying only after the order has been reviewed and the final price has been confirmed.</p><form data-payment-form><div class="payment-methods"><div class="payment-option"><label><input type="radio" name="payment" checked><div><b>Online Payment</b><small>Card, UPI or supported online methods</small></div><i class="bi bi-credit-card"></i></label></div><div class="payment-option"><label><input type="radio" name="payment"><div><b>Bank Transfer</b><small>Show bank transfer instructions</small></div><i class="bi bi-bank"></i></label></div></div><div class="payment-security"><i class="bi bi-shield-lock"></i><span>Payment details are handled securely. The production website will use the approved payment gateway and final transaction flow.</span></div></form></section>
-    <aside class="payment-summary"><span class="section-mini-title">Order #AG-2048</span><h3>Reviewed order total</h3><a class="summary-row" href="product.html"><span>Premium Porcelain Dinner Set</span><b>₹72,000</b></a><a class="summary-row" href="product.html"><span>Commercial Serve Bowl Set</span><b>₹48,000</b></a><div class="summary-row"><span>GST</span><b>₹21,600</b></div><div class="summary-row"><span>Delivery</span><b>Included</b></div><div class="pay-total">₹1,41,600</div><button class="journey-btn" type="button" onclick="document.querySelector('[data-payment-form]').requestSubmit()">Pay ₹1,41,600 <i class="bi bi-lock"></i></button><a href="order-details.html" class="journey-btn-ghost mt-3">Back to order details</a><a href="orders.html" class="journey-btn-ghost mt-2">My Orders</a></aside>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Payment | Agarwal Crockery House</title>
+<link rel="icon" href="assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="stylesheet" href="assets/css/cart.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-row">
+    <a class="logo-mark" href="index.html"><img src="assets/img/logo.png" alt="Agarwal Crockery House"></a>
+    <div class="header-actions" style="margin-left:auto;">
+      <a class="icon-link" href="orders.html"><i class="bi bi-receipt"></i><span class="label">Orders</span></a>
+    </div>
   </div>
-</div></main>
-<footer class="journey-footer"><div class="container journey-footer-main"><div class="journey-footer-brand"><img src="assets/img/logo.svg" alt="Agarwal"><p>Commercial crockery, tableware and hospitality supply for professional buyers.</p></div><div><h4>Shop</h4><a href="shop.html">All Products</a><a href="product.html">Product Details</a><a href="cart.html">Order Basket</a><a href="checkout.html">Submit Order</a></div><div><h4>Account</h4><a href="login.html">Login</a><a href="register.html">Register</a><a href="orders.html">My Orders</a></div><div><h4>Order</h4><a href="order-details.html">Order Details</a><a href="payment.html">Payment</a><a href="index.html#contact">Contact Team</a></div></div><div class="container journey-footer-bottom"><span>© Agarwal Crockery House</span><span>Privacy · Terms · Shipping · Returns</span></div></footer>
-<script src="assets/js/commerce-pages.js"></script></body></html>
+</header>
+
+<main>
+  <div class="auth-wrap">
+    <div class="auth-card" style="max-width:460px;">
+      <span class="eyebrow">Secure Payment</span>
+      <h1>Pay for Order <span id="payOrderId"></span></h1>
+      <p>Complete your payment securely to confirm this order.</p>
+
+      <div class="summary-note" style="margin-bottom:24px;">
+        <i class="bi bi-shield-lock"></i>
+        Amount payable: <b id="payAmount" style="margin-left:4px;"></b>
+      </div>
+
+      <form id="paymentForm">
+        <div class="field">
+          <label for="cardNumber">Card Number</label>
+          <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" required>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="cardExpiry">Expiry</label>
+            <input type="text" id="cardExpiry" placeholder="MM/YY" required>
+          </div>
+          <div class="field">
+            <label for="cardCvv">CVV</label>
+            <input type="text" id="cardCvv" placeholder="•••" required>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-dark btn-block">Pay Now <i class="bi bi-lock-fill"></i></button>
+      </form>
+      <p style="text-align:center; font-size:11.5px; color:var(--ink-soft); margin-top:16px;">
+        <i class="bi bi-shield-check"></i> Payments are processed securely. This is a demo checkout for preview purposes.
+      </p>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer" style="padding-top:36px;">
+  <div class="footer-bottom" style="border-top:1px solid rgba(255,255,255,.08); padding-top:22px;">
+    <span>© 2026 Agarwal Crockery House. All rights reserved.</span>
+    <div class="policies">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="orders.html">My Orders</a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/products.js"></script>
+<script src="assets/js/site.js"></script>
+<script>
+  var params = new URLSearchParams(window.location.search);
+  var id = params.get('id');
+  var order = id ? window.AC.findOrder(id) : null;
+  document.getElementById('payOrderId').textContent = order ? order.id : '';
+  document.getElementById('payAmount').textContent = order && order.price ? '₹' + order.price.toLocaleString('en-IN') : '—';
+
+  document.getElementById('paymentForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (order) window.AC.markPaid(order.id);
+    window.location.href = 'order-details.html?id=' + (order ? order.id : '');
+  });
+</script>
+</body>
+</html>
