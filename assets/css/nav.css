@@ -10,37 +10,56 @@
 .mega-btn i.bi-grid-3x3-gap{color:var(--gold-deep); font-size:14px;}
 
 .mega-panel{
-  position:absolute; top:100%; left:0; margin-top:1px;
-  background:var(--paper); border:1px solid var(--line); border-radius:0 0 14px 14px;
+  position:absolute; top:100%; left:0; margin-top:12px;
+  background:var(--paper); border:1px solid var(--line); border-radius:18px;
   box-shadow:var(--shadow-lg); display:none; overflow:hidden; z-index:80;
-  min-width:640px;
+  min-width:660px;
 }
-.mega-wrap.open .mega-panel{display:flex;}
+.mega-wrap.open .mega-panel{display:flex; animation:megaIn .18s ease;}
+@keyframes megaIn{from{opacity:0; transform:translateY(-6px);} to{opacity:1; transform:translateY(0);}}
+
 .mega-col-main{
-  width:300px; flex-shrink:0; border-right:1px solid var(--line); padding:10px;
-  max-height:420px; overflow-y:auto;
+  width:310px; flex-shrink:0; border-right:1px solid var(--line); padding:14px;
+  max-height:440px; overflow-y:auto; background:var(--cream);
 }
 .mega-main-link{
-  display:flex; align-items:center; justify-content:space-between; gap:8px;
-  padding:11px 14px; border-radius:10px; font-size:13.5px; font-weight:600; color:var(--ink);
-  transition:background .15s ease, color .15s ease;
+  display:flex; align-items:center; gap:12px;
+  padding:11px 14px; border-radius:12px; font-size:13.5px; font-weight:600; color:var(--ink);
+  transition:background .15s ease, color .15s ease, transform .15s ease;
 }
-.mega-main-link i{font-size:12px; color:var(--ink-soft);}
-.mega-main-link:hover, .mega-main-link.active{background:var(--cream-deep); color:var(--gold-deep);}
-.mega-main-link.all-link{color:var(--gold-deep); border-bottom:1px solid var(--line); border-radius:0; margin-bottom:6px; padding-bottom:14px;}
+.mega-main-link .mega-icon{
+  width:30px; height:30px; border-radius:9px; background:var(--paper); border:1px solid var(--line);
+  display:flex; align-items:center; justify-content:center; flex-shrink:0; color:var(--gold-deep); font-size:14px;
+  transition:background .15s ease, border-color .15s ease;
+}
+.mega-main-link span.label{flex:1;}
+.mega-main-link i.bi-chevron-right{font-size:11px; color:var(--ink-soft); flex-shrink:0;}
+.mega-main-link:hover, .mega-main-link.active{background:var(--paper); color:var(--gold-deep); box-shadow:var(--shadow-sm);}
+.mega-main-link:hover .mega-icon, .mega-main-link.active .mega-icon{background:var(--gold-deep); border-color:var(--gold-deep); color:#fff;}
+.mega-main-link.all-link{
+  color:var(--gold-deep); border-bottom:1px solid var(--line); border-radius:0;
+  margin-bottom:8px; padding-bottom:16px;
+}
+.mega-main-link.all-link .mega-icon{background:var(--gold-deep); border-color:var(--gold-deep); color:#fff;}
 
-.mega-col-subs{width:340px; padding:16px 18px; max-height:420px; overflow-y:auto;}
+.mega-col-subs{width:360px; padding:22px 24px; max-height:440px; overflow-y:auto;}
 .mega-col-subs h4{
-  font-family:var(--sans); font-size:11px; letter-spacing:.08em; text-transform:uppercase;
-  color:var(--ink-soft); font-weight:700; margin-bottom:12px;
+  font-family:var(--serif); font-size:16px; font-weight:600; color:var(--ink);
+  margin-bottom:16px; padding-bottom:14px; border-bottom:1px solid var(--line);
 }
 .mega-sub-link{
-  display:block; padding:9px 0; font-size:13px; color:var(--ink-soft); font-weight:500;
-  transition:color .15s ease;
+  display:flex; align-items:center; gap:8px; padding:9px 0; font-size:13.5px; color:var(--ink-soft); font-weight:500;
+  transition:color .15s ease, gap .15s ease;
 }
-.mega-sub-link:hover{color:var(--gold-deep);}
-.mega-empty{font-size:12.5px; color:var(--ink-soft); line-height:1.7;}
+.mega-sub-link::before{content:""; width:4px; height:4px; border-radius:999px; background:var(--gold-soft); flex-shrink:0;}
+.mega-sub-link:hover{color:var(--gold-deep); gap:12px;}
+.mega-sub-link:hover::before{background:var(--gold-deep);}
+.mega-empty{font-size:13px; color:var(--ink-soft); line-height:1.7;}
 .mega-empty a{color:var(--gold-deep); font-weight:600;}
+.mega-shop-all{
+  display:inline-flex; align-items:center; gap:6px; margin-top:16px; font-size:12.5px; font-weight:700;
+  color:var(--gold-deep); padding-top:14px; border-top:1px solid var(--line); width:100%;
+}
 
 @media (max-width:720px){
   .mega-panel{position:fixed; inset:0; top:auto; margin:0; border-radius:0; min-width:0; width:100%; max-height:80vh;}

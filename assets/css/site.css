@@ -134,7 +134,7 @@ nav.category-nav{border-top:1px solid var(--line);}
   white-space:nowrap; border-bottom:2px solid transparent; transition:color .15s ease, border-color .15s ease;
 }
 .category-nav-row a:hover, .category-nav-row a.active{color:var(--ink); border-color:var(--gold);}
-.category-nav-row a.pricing-link{color:var(--gold-deep); font-weight:600; margin-left:auto; display:flex; align-items:center; gap:6px;}
+.category-nav-row a.pricing-link{color:var(--gold-deep); font-weight:600; display:flex; align-items:center; gap:6px;}
 
 /* ---------- Breadcrumb / page header ---------- */
 .page-hero{
