@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   ensureStylesheet('assets/css/premium-overrides.css');
   ensureStylesheet('assets/css/premium-v10.css');
   ensureStylesheet('assets/css/premium-v11.css');
+  ensureStylesheet('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap');
 
   const footer = document.querySelector('.journey-footer');
   if (footer) {
@@ -35,7 +36,10 @@ document.addEventListener('DOMContentLoaded', () => {
           <p>A B2B hospitality store built for restaurants, hotels, cafes, institutions and commercial kitchens.</p>
           <div class="premium-footer-mini"><b>Private Pricing</b><b>Business Orders</b><b>Order History</b></div>
         </div>
-        <div class="premium-footer-col"><span>SHOP</span><a href="shop.html">All Products</a><a href="shop.html?cat=crockery">Crockery</a><a href="shop.html?cat=glassware">Glassware</a><a href="shop.html?cat=catering">Buffet & Catering</a><a href="shop.html?cat=equipment">Kitchen Equipment</a></div>
+        <div class="premium-footer-col"><span>SHOP</span><a href="shop.html">All Products</a><a href="shop.html?cat=commercial-kitchen">Commercial Kitchen Equipments</a>
+        <a href="shop.html?cat=crockery">Crockery</a>
+        <a href="shop.html?cat=cutlery">Cutlery</a>
+        <a href="shop.html?cat=glassware">Glassware</a></div>
         <div class="premium-footer-col"><span>ACCOUNT</span><a href="login.html">Login</a><a href="register.html">Create Account</a><a href="orders.html">My Orders</a><a href="cart.html">Order Basket</a></div>
         <div class="premium-footer-col"><span>BUSINESS</span><a href="index.html#project">Complete Kitchen Projects</a><a href="checkout.html">Submit an Order</a><a href="order-details.html">Order Details</a><a href="orders.html">Order Support</a></div>
       </div>
