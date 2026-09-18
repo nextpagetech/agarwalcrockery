@@ -127,10 +127,8 @@ header.site-header{
 nav.category-nav{border-top:1px solid var(--line);}
 .category-nav-row{
   max-width:1280px; margin:0 auto; padding:0 32px;
-  display:flex; align-items:center; gap:30px; overflow-x:auto;
-  scrollbar-width:none;
+  display:flex; align-items:center; gap:30px; flex-wrap:wrap;
 }
-.category-nav-row::-webkit-scrollbar{display:none;}
 .category-nav-row a{
   font-size:13.5px; font-weight:500; color:var(--ink-soft); padding:12px 0;
   white-space:nowrap; border-bottom:2px solid transparent; transition:color .15s ease, border-color .15s ease;

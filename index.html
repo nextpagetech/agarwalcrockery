@@ -3,14 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Agarwal Crockery House | Premium Crockery, Glassware &amp; Tableware</title>
-<meta name="description" content="Shop dinner sets, glassware, serveware and kitchen essentials from Agarwal Crockery House. Browse and order online — pricing is shared after your order is reviewed.">
+<title>Agarwal Crockery House | Commercial Kitchen Equipment, Crockery &amp; Tableware</title>
+<meta name="description" content="Shop commercial kitchen equipment, crockery, glassware and tableware from Agarwal Crockery House. Browse and order online — pricing is shared after your order is reviewed.">
 <link rel="icon" href="assets/img/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/site.css">
+<link rel="stylesheet" href="assets/css/nav.css">
 <link rel="stylesheet" href="assets/css/homepage.css">
 </head>
 <body>
@@ -24,7 +25,7 @@
     </a>
     <form class="search-form" action="shop.html">
       <i class="bi bi-search"></i>
-      <input type="search" name="q" placeholder="Search dinner sets, glassware, serveware...">
+      <input type="search" name="q" placeholder="Search kitchen equipment, crockery, glassware...">
       <button type="submit" aria-label="Search"><i class="bi bi-arrow-right"></i></button>
     </form>
     <div class="header-actions">
@@ -36,13 +37,13 @@
   <nav class="category-nav">
     <div class="category-nav-row">
       <a href="shop.html">All Products</a>
-      <a href="shop.html?cat=dinner-sets">Dinner Sets</a>
-      <a href="shop.html?cat=plates-bowls">Plates &amp; Bowls</a>
-      <a href="shop.html?cat=glassware">Glassware</a>
-      <a href="shop.html?cat=serveware">Serveware</a>
-      <a href="shop.html?cat=kitchen">Kitchen Items</a>
-      <a href="shop.html?cat=gifts">Gift Collections</a>
-      <a class="pricing-link" href="#how-it-works"><i class="bi bi-lock"></i> How Pricing Works</a>
+      <div class="mega-wrap" id="megaWrap">
+        <button type="button" class="mega-btn" id="megaBtn" aria-haspopup="true" aria-expanded="false">
+          <i class="bi bi-grid-3x3-gap"></i> Category <i class="bi bi-chevron-down"></i>
+        </button>
+        <div class="mega-panel" id="megaPanel"></div>
+      </div>
+      <a class="pricing-link" href="index.html#how-it-works"><i class="bi bi-lock"></i> How Pricing Works</a>
     </div>
   </nav>
 </header>
@@ -52,9 +53,9 @@
   <section class="hero">
     <div class="hero-grid">
       <div class="hero-copy">
-        <span class="eyebrow">The Table, Elevated</span>
-        <h1>Crockery &amp; tableware<br>for every kind of <em>gathering.</em></h1>
-        <p>Browse our full collection of dinner sets, glassware and serveware, and place your order online in a few clicks — no price shopping required upfront.</p>
+        <span class="eyebrow">Commercial Kitchen &amp; Tableware</span>
+        <h1>Kitchen equipment &amp; tableware<br>for every kind of <em>business.</em></h1>
+        <p>Browse commercial kitchen equipment, crockery, glassware and bar essentials, and place your order online in a few clicks — no price shopping required upfront.</p>
         <p style="margin-top:-10px;">Our team reviews every order and shares your final price privately before you pay.</p>
         <div class="hero-ctas">
           <a class="btn btn-dark" href="shop.html">Explore Collection <i class="bi bi-arrow-right"></i></a>
@@ -67,7 +68,7 @@
       </div>
       <div class="hero-visual">
         <img src="assets/img/catalog/hero.jpg" alt="Elegant table setting with premium crockery">
-        <div class="tag"><i class="bi bi-stars"></i> Curated Dinnerware Collections</div>
+        <div class="tag"><i class="bi bi-stars"></i> Curated Kitchen &amp; Tableware Collections</div>
       </div>
     </div>
   </section>
@@ -83,33 +84,57 @@
 
   <section class="section">
     <div class="section-head">
-      <div><span class="eyebrow">Shop by Category</span><h2>Find exactly what your table needs.</h2></div>
+      <div><span class="eyebrow">Shop by Category</span><h2>Find exactly what your business needs.</h2></div>
       <a class="head-link" href="shop.html">View all categories <i class="bi bi-arrow-right"></i></a>
     </div>
     <div class="cat-grid">
-      <a class="cat-card" href="shop.html?cat=dinner-sets">
-        <img src="assets/img/catalog/cat-dinner-sets.jpg" alt="Dinner Sets">
-        <div class="cat-label"><h3>Dinner Sets</h3><span>COMPLETE SETS</span></div>
+      <a class="cat-card" href="shop.html?cat=kitchen-equipment">
+        <img src="assets/img/catalog/cat-kitchen-equipment.jpg" alt="Commercial Kitchen Equipments">
+        <div class="cat-label"><h3>Kitchen Equipments</h3><span>COMMERCIAL GRADE</span></div>
       </a>
-      <a class="cat-card" href="shop.html?cat=plates-bowls">
-        <img src="assets/img/catalog/cat-plates-bowls.jpg" alt="Plates and Bowls">
-        <div class="cat-label"><h3>Plates &amp; Bowls</h3><span>DAILY DINING</span></div>
+      <a class="cat-card" href="shop.html?cat=bain-marie">
+        <img src="assets/img/catalog/cat-bain-marie.jpg" alt="Bain Marie">
+        <div class="cat-label"><h3>Bain Marie</h3><span>FOOD WARMING</span></div>
+      </a>
+      <a class="cat-card" href="shop.html?cat=commercial-oven">
+        <img src="assets/img/catalog/cat-commercial-oven.jpg" alt="Commercial Oven">
+        <div class="cat-label"><h3>Commercial Oven</h3><span>BAKING &amp; ROASTING</span></div>
+      </a>
+      <a class="cat-card" href="shop.html?cat=commercial-mixer">
+        <img src="assets/img/catalog/cat-commercial-mixer.jpg" alt="Commercial Mixer">
+        <div class="cat-label"><h3>Commercial Mixer</h3><span>DOUGH &amp; BATTER</span></div>
+      </a>
+      <a class="cat-card" href="shop.html?cat=dustbins">
+        <img src="assets/img/catalog/cat-dustbins.jpg" alt="Dustbins">
+        <div class="cat-label"><h3>Dustbins</h3><span>WASTE MANAGEMENT</span></div>
+      </a>
+      <a class="cat-card" href="shop.html?cat=tableware">
+        <img src="assets/img/catalog/cat-tableware.jpg" alt="Tableware">
+        <div class="cat-label"><h3>Tableware</h3><span>DINING ESSENTIALS</span></div>
+      </a>
+      <a class="cat-card" href="shop.html?cat=service-products">
+        <img src="assets/img/catalog/cat-service-products.jpg" alt="Service Related Products">
+        <div class="cat-label"><h3>Service Products</h3><span>FOR HOSPITALITY STAFF</span></div>
+      </a>
+      <a class="cat-card" href="shop.html?cat=crockery">
+        <img src="assets/img/catalog/cat-crockery.jpg" alt="Crockery">
+        <div class="cat-label"><h3>Crockery</h3><span>PLATES &amp; BOWLS</span></div>
+      </a>
+      <a class="cat-card" href="shop.html?cat=bar-items">
+        <img src="assets/img/catalog/cat-bar-items.jpg" alt="Bar Items">
+        <div class="cat-label"><h3>Bar Items</h3><span>BEVERAGE SERVICE</span></div>
+      </a>
+      <a class="cat-card" href="shop.html?cat=cutlery">
+        <img src="assets/img/catalog/cat-cutlery.jpg" alt="Cutlery">
+        <div class="cat-label"><h3>Cutlery</h3><span>DAILY DINING</span></div>
       </a>
       <a class="cat-card" href="shop.html?cat=glassware">
         <img src="assets/img/catalog/cat-glassware.jpg" alt="Glassware">
         <div class="cat-label"><h3>Glassware</h3><span>TUMBLERS &amp; STEMWARE</span></div>
       </a>
-      <a class="cat-card" href="shop.html?cat=serveware">
-        <img src="assets/img/catalog/cat-serveware.jpg" alt="Serveware">
-        <div class="cat-label"><h3>Serveware</h3><span>PLATTERS &amp; BOWLS</span></div>
-      </a>
-      <a class="cat-card" href="shop.html?cat=kitchen">
-        <img src="assets/img/catalog/cat-kitchen.jpg" alt="Kitchen Items">
-        <div class="cat-label"><h3>Kitchen Items</h3><span>EVERYDAY ESSENTIALS</span></div>
-      </a>
-      <a class="cat-card" href="shop.html?cat=gifts">
-        <img src="assets/img/catalog/cat-gifts.jpg" alt="Gift Collections">
-        <div class="cat-label"><h3>Gift Collections</h3><span>FOR EVERY OCCASION</span></div>
+      <a class="cat-card" href="shop.html?cat=waffle-cone-maker">
+        <img src="assets/img/catalog/cat-waffle-cone-maker.jpg" alt="Waffle &amp; Cone Maker">
+        <div class="cat-label"><h3>Waffle &amp; Cone Maker</h3><span>DESSERT COUNTERS</span></div>
       </a>
     </div>
   </section>
@@ -120,62 +145,62 @@
       <a class="head-link" href="shop.html">Shop full catalogue <i class="bi bi-arrow-right"></i></a>
     </div>
     <div class="product-grid">
-      <article class="product-card" data-id="p1">
+      <article class="product-card" data-id="p8">
         <div class="product-media">
           <span class="new-badge">NEW</span>
-          <a href="product.html?id=p1"><img src="assets/img/catalog/p1.jpg" alt="Porcelain Dinner Set"></a>
+          <a href="product.html?id=p8"><img src="assets/img/catalog/p8.jpg" alt="Electric Bain Marie"></a>
           <button class="wish-btn" data-wish aria-label="Add to wishlist"><i class="bi bi-heart"></i></button>
         </div>
         <div class="product-body">
-          <span class="product-cat">Dinner Sets</span>
-          <h3 class="product-title"><a href="product.html?id=p1">Ivory Porcelain 24-Piece Dinner Set</a></h3>
-          <p class="product-desc">Fine porcelain dinnerware with a soft ivory glaze, crafted for everyday elegance.</p>
+          <span class="product-cat">Bain Marie</span>
+          <h3 class="product-title"><a href="product.html?id=p8">Electric Bain Marie, 4-Container</a></h3>
+          <p class="product-desc">Reliable food-warming bain marie for buffet and catering service.</p>
           <span class="price-badge"><i class="bi bi-lock"></i> Price available after order review</span>
           <div class="product-foot">
             <button class="add-order-btn" data-add-order><i class="bi bi-bag-plus"></i> Add to Order</button>
           </div>
         </div>
       </article>
-      <article class="product-card" data-id="p2">
+      <article class="product-card" data-id="p12">
         <div class="product-media">
-          <a href="product.html?id=p2"><img src="assets/img/catalog/p2.jpg" alt="Ceramic Serve Bowls"></a>
+          <span class="new-badge">NEW</span>
+          <a href="product.html?id=p12"><img src="assets/img/catalog/p12.jpg" alt="Premium Porcelain Tableware Set"></a>
           <button class="wish-btn" data-wish aria-label="Add to wishlist"><i class="bi bi-heart"></i></button>
         </div>
         <div class="product-body">
-          <span class="product-cat">Serveware</span>
-          <h3 class="product-title"><a href="product.html?id=p2">Terracotta Glaze Serving Bowl Set</a></h3>
-          <p class="product-desc">Hand-finished serving bowls that bring warmth and texture to your table.</p>
+          <span class="product-cat">Tableware</span>
+          <h3 class="product-title"><a href="product.html?id=p12">Premium Porcelain Tableware Set</a></h3>
+          <p class="product-desc">Elegant tableware collection crafted for professional dining service.</p>
           <span class="price-badge"><i class="bi bi-lock"></i> Price available after order review</span>
           <div class="product-foot">
             <button class="add-order-btn" data-add-order><i class="bi bi-bag-plus"></i> Add to Order</button>
           </div>
         </div>
       </article>
-      <article class="product-card" data-id="p3">
+      <article class="product-card" data-id="p14">
         <div class="product-media">
-          <span class="new-badge">NEW</span>
-          <a href="product.html?id=p3"><img src="assets/img/catalog/p3.jpg" alt="Crystal Glass Tumblers"></a>
+          <a href="product.html?id=p14"><img src="assets/img/catalog/p14.jpg" alt="Ivory Porcelain Dinner Set"></a>
+          <button class="wish-btn" data-wish aria-label="Add to wishlist"><i class="bi bi-heart"></i></button>
+        </div>
+        <div class="product-body">
+          <span class="product-cat">Crockery</span>
+          <h3 class="product-title"><a href="product.html?id=p14">Ivory Porcelain 24-Piece Dinner Set</a></h3>
+          <p class="product-desc">Fine porcelain crockery with a soft ivory glaze, for everyday elegance.</p>
+          <span class="price-badge"><i class="bi bi-lock"></i> Price available after order review</span>
+          <div class="product-foot">
+            <button class="add-order-btn" data-add-order><i class="bi bi-bag-plus"></i> Add to Order</button>
+          </div>
+        </div>
+      </article>
+      <article class="product-card" data-id="p17">
+        <div class="product-media">
+          <a href="product.html?id=p17"><img src="assets/img/catalog/p17.jpg" alt="Crystal Glass Tumblers"></a>
           <button class="wish-btn" data-wish aria-label="Add to wishlist"><i class="bi bi-heart"></i></button>
         </div>
         <div class="product-body">
           <span class="product-cat">Glassware</span>
-          <h3 class="product-title"><a href="product.html?id=p3">Crystal-Cut Water Tumbler, Set of 6</a></h3>
-          <p class="product-desc">Brilliant cut glass tumblers that catch the light at every dinner table.</p>
-          <span class="price-badge"><i class="bi bi-lock"></i> Price available after order review</span>
-          <div class="product-foot">
-            <button class="add-order-btn" data-add-order><i class="bi bi-bag-plus"></i> Add to Order</button>
-          </div>
-        </div>
-      </article>
-      <article class="product-card" data-id="p4">
-        <div class="product-media">
-          <a href="product.html?id=p4"><img src="assets/img/catalog/p4.jpg" alt="Gift Collection Box"></a>
-          <button class="wish-btn" data-wish aria-label="Add to wishlist"><i class="bi bi-heart"></i></button>
-        </div>
-        <div class="product-body">
-          <span class="product-cat">Gift Collections</span>
-          <h3 class="product-title"><a href="product.html?id=p4">Festive Tableware Gift Box</a></h3>
-          <p class="product-desc">A curated gift set of fine tableware, boxed and ready for gifting.</p>
+          <h3 class="product-title"><a href="product.html?id=p17">Crystal-Cut Water Tumbler, Set of 6</a></h3>
+          <p class="product-desc">Brilliant cut glass tumblers that catch the light at every table.</p>
           <span class="price-badge"><i class="bi bi-lock"></i> Price available after order review</span>
           <div class="product-foot">
             <button class="add-order-btn" data-add-order><i class="bi bi-bag-plus"></i> Add to Order</button>
@@ -245,12 +270,12 @@
     </div>
     <div class="footer-col">
       <h4>Categories</h4>
-      <a href="shop.html?cat=dinner-sets">Dinner Sets</a>
-      <a href="shop.html?cat=plates-bowls">Plates &amp; Bowls</a>
+      <a href="shop.html?cat=kitchen-equipment">Kitchen Equipments</a>
+      <a href="shop.html?cat=bain-marie">Bain Marie</a>
+      <a href="shop.html?cat=commercial-oven">Commercial Oven</a>
+      <a href="shop.html?cat=tableware">Tableware</a>
+      <a href="shop.html?cat=crockery">Crockery</a>
       <a href="shop.html?cat=glassware">Glassware</a>
-      <a href="shop.html?cat=serveware">Serveware</a>
-      <a href="shop.html?cat=kitchen">Kitchen Items</a>
-      <a href="shop.html?cat=gifts">Gift Collections</a>
     </div>
     <div class="footer-col">
       <h4>Quick Links</h4>
@@ -288,7 +313,9 @@
 
 <div class="toast-note" id="homeToast"><i class="bi bi-check-circle-fill"></i><span data-toast-text>Added to your order</span><a href="cart.html">View cart</a></div>
 
+<script src="assets/js/categories.js"></script>
 <script src="assets/js/products.js"></script>
 <script src="assets/js/site.js"></script>
+<script src="assets/js/nav.js"></script>
 </body>
 </html>

@@ -4,13 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Shop All Products | Agarwal Crockery House</title>
-<meta name="description" content="Browse dinner sets, plates &amp; bowls, glassware, serveware, kitchen items and gift collections. Add to cart and place your order — pricing follows after review.">
+<meta name="description" content="Browse commercial kitchen equipment, tableware, crockery, glassware and bar items. Add to cart and place your order — pricing follows after review.">
 <link rel="icon" href="assets/img/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/site.css">
+<link rel="stylesheet" href="assets/css/nav.css">
 <link rel="stylesheet" href="assets/css/shop.css">
 </head>
 <body>
@@ -22,7 +23,7 @@
     <a class="logo-mark" href="index.html"><img src="assets/img/logo.png" alt="Agarwal Crockery House"></a>
     <form class="search-form" id="shopSearchForm" onsubmit="return false;">
       <i class="bi bi-search"></i>
-      <input type="search" id="shopSearch" placeholder="Search dinner sets, glassware, serveware...">
+      <input type="search" id="shopSearch" placeholder="Search kitchen equipment, crockery, glassware...">
       <button type="submit" aria-label="Search"><i class="bi bi-arrow-right"></i></button>
     </form>
     <div class="header-actions">
@@ -33,13 +34,13 @@
   </div>
   <nav class="category-nav">
     <div class="category-nav-row">
-      <a href="shop.html" class="active">All Products</a>
-      <a href="shop.html?cat=dinner-sets">Dinner Sets</a>
-      <a href="shop.html?cat=plates-bowls">Plates &amp; Bowls</a>
-      <a href="shop.html?cat=glassware">Glassware</a>
-      <a href="shop.html?cat=serveware">Serveware</a>
-      <a href="shop.html?cat=kitchen">Kitchen Items</a>
-      <a href="shop.html?cat=gifts">Gift Collections</a>
+      <a href="shop.html">All Products</a>
+      <div class="mega-wrap" id="megaWrap">
+        <button type="button" class="mega-btn" id="megaBtn" aria-haspopup="true" aria-expanded="false">
+          <i class="bi bi-grid-3x3-gap"></i> Category <i class="bi bi-chevron-down"></i>
+        </button>
+        <div class="mega-panel" id="megaPanel"></div>
+      </div>
       <a class="pricing-link" href="index.html#how-it-works"><i class="bi bi-lock"></i> How Pricing Works</a>
     </div>
   </nav>
@@ -50,7 +51,7 @@
     <div>
       <div class="breadcrumb"><a href="index.html">Home</a> / Shop</div>
       <h1>Shop All Products</h1>
-      <p>Explore our full range of crockery, glassware and kitchen essentials. Add what you need to your cart — pricing is confirmed after order review.</p>
+      <p>Explore our full range of commercial kitchen equipment, tableware, crockery and glassware. Add what you need to your cart — pricing is confirmed after order review.</p>
     </div>
   </div>
 </div>
@@ -64,14 +65,8 @@
         <h4 style="margin:0;">Filters</h4>
         <button data-close-filter aria-label="Close filters"><i class="bi bi-x-lg"></i></button>
       </div>
-      <div class="filter-group">
+      <div class="filter-group" id="catFilterGroup">
         <h4>Category</h4>
-        <label class="filter-option"><input type="checkbox" name="catFilter" value="dinner-sets"> Dinner Sets</label>
-        <label class="filter-option"><input type="checkbox" name="catFilter" value="plates-bowls"> Plates &amp; Bowls</label>
-        <label class="filter-option"><input type="checkbox" name="catFilter" value="glassware"> Glassware</label>
-        <label class="filter-option"><input type="checkbox" name="catFilter" value="serveware"> Serveware</label>
-        <label class="filter-option"><input type="checkbox" name="catFilter" value="kitchen"> Kitchen Items</label>
-        <label class="filter-option"><input type="checkbox" name="catFilter" value="gifts"> Gift Collections</label>
       </div>
       <div class="filter-group">
         <button class="filter-clear" id="filterClear">Clear all filters</button>
@@ -116,12 +111,12 @@
     </div>
     <div class="footer-col">
       <h4>Categories</h4>
-      <a href="shop.html?cat=dinner-sets">Dinner Sets</a>
-      <a href="shop.html?cat=plates-bowls">Plates &amp; Bowls</a>
+      <a href="shop.html?cat=kitchen-equipment">Kitchen Equipments</a>
+      <a href="shop.html?cat=bain-marie">Bain Marie</a>
+      <a href="shop.html?cat=commercial-oven">Commercial Oven</a>
+      <a href="shop.html?cat=tableware">Tableware</a>
+      <a href="shop.html?cat=crockery">Crockery</a>
       <a href="shop.html?cat=glassware">Glassware</a>
-      <a href="shop.html?cat=serveware">Serveware</a>
-      <a href="shop.html?cat=kitchen">Kitchen Items</a>
-      <a href="shop.html?cat=gifts">Gift Collections</a>
     </div>
     <div class="footer-col">
       <h4>Quick Links</h4>
@@ -159,8 +154,10 @@
 
 <div class="toast-note" id="acToast"><i class="bi bi-check-circle-fill"></i><span data-toast-text>Added to your order</span><a href="cart.html">View cart</a></div>
 
+<script src="assets/js/categories.js"></script>
 <script src="assets/js/products.js"></script>
 <script src="assets/js/site.js"></script>
+<script src="assets/js/nav.js"></script>
 <script src="assets/js/shop.js"></script>
 </body>
 </html>

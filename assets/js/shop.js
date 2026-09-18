@@ -1,18 +1,31 @@
 document.addEventListener('DOMContentLoaded', function () {
   var PRODUCTS = window.AC.PRODUCTS;
+  var CAT_LABELS = window.AC_CATEGORY_LABELS || {};
   var grid = document.getElementById('shopGrid');
   var resultCount = document.getElementById('resultCount');
   var emptyState = document.getElementById('shopEmpty');
   var searchInput = document.getElementById('shopSearch');
   var sortSelect = document.getElementById('shopSort');
   var chipsRow = document.getElementById('shopChips');
-  var catInputs = document.querySelectorAll('input[name="catFilter"]');
+  var filterGroup = document.getElementById('catFilterGroup');
   var clearBtn = document.getElementById('filterClear');
 
-  var CAT_LABELS = {
-    'dinner-sets': 'Dinner Sets', 'plates-bowls': 'Plates & Bowls', 'glassware': 'Glassware',
-    'serveware': 'Serveware', 'kitchen': 'Kitchen Items', 'gifts': 'Gift Collections'
-  };
+  // Build the filter checkbox list from the shared taxonomy: each main
+  // category, with its subcategories (if any) indented beneath it.
+  (window.AC_CATEGORIES || []).forEach(function (cat) {
+    var label = document.createElement('label');
+    label.className = 'filter-option';
+    label.innerHTML = '<input type="checkbox" name="catFilter" value="' + cat.id + '"> ' + cat.label;
+    filterGroup.appendChild(label);
+    cat.subs.forEach(function (sub) {
+      var subLabel = document.createElement('label');
+      subLabel.className = 'filter-option';
+      subLabel.style.paddingLeft = '18px';
+      subLabel.innerHTML = '<input type="checkbox" name="catFilter" value="' + sub.id + '"> ' + sub.label;
+      filterGroup.appendChild(subLabel);
+    });
+  });
+  var catInputs = filterGroup.querySelectorAll('input[name="catFilter"]');
 
   function cardHtml(p) {
     return '' +
@@ -55,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
     emptyState.classList.toggle('show', list.length === 0);
 
     chipsRow.innerHTML = cats.map(function (c) {
-      return '<span class="shop-chip">' + CAT_LABELS[c] + '<button data-remove-cat="' + c + '" aria-label="Remove filter"><i class="bi bi-x"></i></button></span>';
+      return '<span class="shop-chip">' + (CAT_LABELS[c] || c) + '<button data-remove-cat="' + c + '" aria-label="Remove filter"><i class="bi bi-x"></i></button></span>';
     }).join('') + (term ? '<span class="shop-chip">"' + term + '"<button data-remove-search><i class="bi bi-x"></i></button></span>' : '');
 
     chipsRow.querySelectorAll('[data-remove-cat]').forEach(function (btn) {
