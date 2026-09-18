@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   ensureStylesheet('assets/css/premium-v10.css');
   ensureStylesheet('assets/css/hero-fix-v10.css');
   ensureStylesheet('assets/css/premium-v11.css');
+  ensureStylesheet('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap');
 
   const qs = (selector, context = document) => context.querySelector(selector);
   const qsa = (selector, context = document) => [...context.querySelectorAll(selector)];
@@ -66,10 +67,10 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="premium-footer-col">
         <span>SHOP</span>
         <a href="shop.html">All Products</a>
+        <a href="shop.html?cat=commercial-kitchen">Commercial Kitchen Equipments</a>
         <a href="shop.html?cat=crockery">Crockery</a>
+        <a href="shop.html?cat=cutlery">Cutlery</a>
         <a href="shop.html?cat=glassware">Glassware</a>
-        <a href="shop.html?cat=catering">Buffet & Catering</a>
-        <a href="shop.html?cat=equipment">Kitchen Equipment</a>
       </div>
       <div class="premium-footer-col">
         <span>ACCOUNT</span>
