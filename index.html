@@ -1,100 +1,293 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Agarwal Crockery House | Commercial Kitchen & Hospitality Store</title>
-  <meta name="description" content="Shop crockery, glassware, buffetware and commercial kitchen products for restaurants, hotels, cafes and institutions.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/ecommerce-v9.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agarwal Crockery House | Premium Crockery, Glassware &amp; Tableware</title>
+<meta name="description" content="Shop dinner sets, glassware, serveware and kitchen essentials from Agarwal Crockery House. Browse and order online — pricing is shared after your order is reviewed.">
+<link rel="icon" href="assets/img/logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/homepage.css">
 </head>
 <body>
-  <div class="topbar"><div class="container"><span><b>B2B hospitality store</b> · Products for restaurants, hotels, cafes & institutions</span><span><i class="bi bi-lock me-1"></i> Private pricing · Pay only after review</span></div></div>
 
-  <header class="commerce-header">
-    <div class="container header-main">
-      <a class="logo" href="index.html"><img src="assets/img/logo.svg" alt="Agarwal Crockery House"></a>
-      <form class="search-box" action="shop.html"><i class="bi bi-search"></i><input name="q" type="search" placeholder="Search crockery, glassware, buffetware, kitchen equipment..."><button>Search</button></form>
-      <div class="header-actions">
-        <a class="header-action account" href="login.html"><i class="bi bi-person"></i><span class="label">Login</span></a>
-        <a class="header-action orders" href="orders.html"><i class="bi bi-receipt"></i><span class="label">Orders</span></a>
-        <a class="header-action cart" href="cart.html"><i class="bi bi-bag"></i><span class="label">Order Basket</span><span class="badge-count" data-cart-count>0</span></a>
+<div class="announce">✦ <b>Now Open Online</b> — Browse the full collection. Prices are shared privately after your order is reviewed.</div>
+
+<header class="site-header">
+  <div class="header-row">
+    <a class="logo-mark" href="index.html">
+      <img src="assets/img/logo.svg" alt="Agarwal Crockery House">
+      <span class="logo-text"><b>Agarwal Crockery</b><span>HOUSE &nbsp;·&nbsp; EST. TABLEWARE</span></span>
+    </a>
+    <form class="search-form" action="shop.html">
+      <i class="bi bi-search"></i>
+      <input type="search" name="q" placeholder="Search dinner sets, glassware, serveware...">
+      <button type="submit" aria-label="Search"><i class="bi bi-arrow-right"></i></button>
+    </form>
+    <div class="header-actions">
+      <a class="icon-link" href="login.html"><i class="bi bi-person"></i><span class="label">Account</span></a>
+      <a class="icon-link" href="#" aria-label="Wishlist"><i class="bi bi-heart"></i><span class="label">Wishlist</span></a>
+      <a class="icon-link" href="cart.html"><i class="bi bi-bag"></i><span class="label">Cart</span><span class="count" data-cart-count>0</span></a>
+    </div>
+  </div>
+  <nav class="category-nav">
+    <div class="category-nav-row">
+      <a href="shop.html">All Products</a>
+      <a href="shop.html?cat=dinner-sets">Dinner Sets</a>
+      <a href="shop.html?cat=plates-bowls">Plates &amp; Bowls</a>
+      <a href="shop.html?cat=glassware">Glassware</a>
+      <a href="shop.html?cat=serveware">Serveware</a>
+      <a href="shop.html?cat=kitchen">Kitchen Items</a>
+      <a href="shop.html?cat=gifts">Gift Collections</a>
+      <a class="pricing-link" href="#how-it-works"><i class="bi bi-lock"></i> How Pricing Works</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">The Table, Elevated</span>
+        <h1>Crockery &amp; tableware<br>for every kind of <em>gathering.</em></h1>
+        <p>Browse our full collection of dinner sets, glassware and serveware, and place your order online in a few clicks — no price shopping required upfront.</p>
+        <p style="margin-top:-10px;">Our team reviews every order and shares your final price privately before you pay.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-dark" href="shop.html">Explore Collection <i class="bi bi-arrow-right"></i></a>
+          <a class="btn btn-outline-light" href="#how-it-works">How Ordering Works</a>
+        </div>
+        <div class="hero-flow-note">
+          <i class="bi bi-shield-lock"></i>
+          <span>Add to cart &amp; place your order — we confirm your price before payment, every time.</span>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img src="https://images.unsplash.com/photo-1584346133934-a3afd2a33c5b?auto=format&fit=crop&w=1400&q=85" alt="Elegant table setting with premium crockery">
+        <div class="tag"><i class="bi bi-stars"></i> Curated Dinnerware Collections</div>
       </div>
     </div>
-    <nav class="category-nav"><div class="container">
-      <a href="shop.html">Shop All</a><a href="shop.html?cat=crockery">Crockery</a><a href="shop.html?cat=glassware">Glassware</a><a href="shop.html?cat=catering">Buffet & Catering</a><a href="shop.html?cat=equipment">Kitchen Equipment</a><a href="#project">Complete Kitchen Projects</a><a href="#why">Why Agarwal</a>
-    </div></nav>
-  </header>
+  </section>
 
-  <main class="page-wrap">
-    <section class="commerce-hero"><div class="container hero-grid">
-      <div class="hero-main">
-        <img src="https://images.unsplash.com/photo-1671656200343-d2a322492223?auto=format&fit=crop&w=1800&q=88" alt="Commercial hospitality kitchen and tableware">
-        <div class="hero-copy"><span class="eyebrow">Commercial kitchen & hospitality store</span><h1>Shop the products your business uses every day.</h1><p>Crockery, glassware, buffetware and commercial kitchen essentials in one B2B buying experience.</p><div class="hero-ctas"><a class="btn-commerce" href="shop.html">Shop Products <i class="bi bi-arrow-right"></i></a><a class="btn-commerce-light" href="#project">Complete Kitchen Requirement</a></div><div class="hero-note"><i class="bi bi-lock"></i> Add products first. Agarwal reviews your requirement and shares the final price before payment.</div></div>
+  <section class="trust-strip">
+    <div class="trust-row">
+      <div class="trust-item"><i class="bi bi-grid-3x3-gap"></i><div><b>Wide Collection</b><small>Crockery to kitchen essentials</small></div></div>
+      <div class="trust-item"><i class="bi bi-gem"></i><div><b>Quality Products</b><small>Chosen for everyday elegance</small></div></div>
+      <div class="trust-item"><i class="bi bi-bag-check"></i><div><b>Easy Ordering</b><small>Shop online in minutes</small></div></div>
+      <div class="trust-item"><i class="bi bi-shield-check"></i><div><b>Secure Payment</b><small>Pay only after price approval</small></div></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <div><span class="eyebrow">Shop by Category</span><h2>Find exactly what your table needs.</h2></div>
+      <a class="head-link" href="shop.html">View all categories <i class="bi bi-arrow-right"></i></a>
+    </div>
+    <div class="cat-grid">
+      <a class="cat-card" href="shop.html?cat=dinner-sets">
+        <img src="https://images.unsplash.com/photo-1610701596007-11502861dcfa?auto=format&fit=crop&w=700&q=84" alt="Dinner Sets">
+        <div class="cat-label"><h3>Dinner Sets</h3><span>COMPLETE SETS</span></div>
+      </a>
+      <a class="cat-card" href="shop.html?cat=plates-bowls">
+        <img src="https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=700&q=84" alt="Plates and Bowls">
+        <div class="cat-label"><h3>Plates &amp; Bowls</h3><span>DAILY DINING</span></div>
+      </a>
+      <a class="cat-card" href="shop.html?cat=glassware">
+        <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=700&q=84" alt="Glassware">
+        <div class="cat-label"><h3>Glassware</h3><span>TUMBLERS &amp; STEMWARE</span></div>
+      </a>
+      <a class="cat-card" href="shop.html?cat=serveware">
+        <img src="https://images.unsplash.com/photo-1746343365753-5ddd9f7f3994?auto=format&fit=crop&w=700&q=84" alt="Serveware">
+        <div class="cat-label"><h3>Serveware</h3><span>PLATTERS &amp; BOWLS</span></div>
+      </a>
+      <a class="cat-card" href="shop.html?cat=kitchen">
+        <img src="https://images.unsplash.com/photo-1671656200343-d2a322492223?auto=format&fit=crop&w=700&q=84" alt="Kitchen Items">
+        <div class="cat-label"><h3>Kitchen Items</h3><span>EVERYDAY ESSENTIALS</span></div>
+      </a>
+      <a class="cat-card" href="shop.html?cat=gifts">
+        <img src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=700&q=84" alt="Gift Collections">
+        <div class="cat-label"><h3>Gift Collections</h3><span>FOR EVERY OCCASION</span></div>
+      </a>
+    </div>
+  </section>
+
+  <section class="section section-tight" style="background:var(--paper); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+    <div class="section-head">
+      <div><span class="eyebrow">Featured Products</span><h2>Loved by homes across the city.</h2></div>
+      <a class="head-link" href="shop.html">Shop full catalogue <i class="bi bi-arrow-right"></i></a>
+    </div>
+    <div class="product-grid">
+      <article class="product-card">
+        <div class="product-media">
+          <span class="new-badge">NEW</span>
+          <img src="https://images.unsplash.com/photo-1610701596007-11502861dcfa?auto=format&fit=crop&w=700&q=84" alt="Porcelain Dinner Set">
+          <button class="wish-btn" data-wish aria-label="Add to wishlist"><i class="bi bi-heart"></i></button>
+        </div>
+        <div class="product-body">
+          <span class="product-cat">Dinner Sets</span>
+          <h3 class="product-title">Ivory Porcelain 24-Piece Dinner Set</h3>
+          <p class="product-desc">Fine porcelain dinnerware with a soft ivory glaze, crafted for everyday elegance.</p>
+          <span class="price-badge"><i class="bi bi-lock"></i> Price available after order review</span>
+          <div class="product-foot">
+            <button class="add-order-btn" data-add-order><i class="bi bi-bag-plus"></i> Add to Order</button>
+          </div>
+        </div>
+      </article>
+      <article class="product-card">
+        <div class="product-media">
+          <img src="https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=700&q=84" alt="Ceramic Serve Bowls">
+          <button class="wish-btn" data-wish aria-label="Add to wishlist"><i class="bi bi-heart"></i></button>
+        </div>
+        <div class="product-body">
+          <span class="product-cat">Serveware</span>
+          <h3 class="product-title">Terracotta Glaze Serving Bowl Set</h3>
+          <p class="product-desc">Hand-finished serving bowls that bring warmth and texture to your table.</p>
+          <span class="price-badge"><i class="bi bi-lock"></i> Price available after order review</span>
+          <div class="product-foot">
+            <button class="add-order-btn" data-add-order><i class="bi bi-bag-plus"></i> Add to Order</button>
+          </div>
+        </div>
+      </article>
+      <article class="product-card">
+        <div class="product-media">
+          <span class="new-badge">NEW</span>
+          <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=700&q=84" alt="Crystal Glass Tumblers">
+          <button class="wish-btn" data-wish aria-label="Add to wishlist"><i class="bi bi-heart"></i></button>
+        </div>
+        <div class="product-body">
+          <span class="product-cat">Glassware</span>
+          <h3 class="product-title">Crystal-Cut Water Tumbler, Set of 6</h3>
+          <p class="product-desc">Brilliant cut glass tumblers that catch the light at every dinner table.</p>
+          <span class="price-badge"><i class="bi bi-lock"></i> Price available after order review</span>
+          <div class="product-foot">
+            <button class="add-order-btn" data-add-order><i class="bi bi-bag-plus"></i> Add to Order</button>
+          </div>
+        </div>
+      </article>
+      <article class="product-card">
+        <div class="product-media">
+          <img src="https://images.unsplash.com/photo-1746343365753-5ddd9f7f3994?auto=format&fit=crop&w=700&q=84" alt="Gift Collection Box">
+          <button class="wish-btn" data-wish aria-label="Add to wishlist"><i class="bi bi-heart"></i></button>
+        </div>
+        <div class="product-body">
+          <span class="product-cat">Gift Collections</span>
+          <h3 class="product-title">Festive Tableware Gift Box</h3>
+          <p class="product-desc">A curated gift set of fine tableware, boxed and ready for gifting.</p>
+          <span class="price-badge"><i class="bi bi-lock"></i> Price available after order review</span>
+          <div class="product-foot">
+            <button class="add-order-btn" data-add-order><i class="bi bi-bag-plus"></i> Add to Order</button>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section flow-section" id="how-it-works">
+    <div class="section-head center-head">
+      <span class="eyebrow">How Ordering Works</span>
+      <h2>Simple ordering. Private pricing.</h2>
+      <p>You can shop and order freely — we handle pricing quietly in the background and share it with you before any payment.</p>
+    </div>
+    <div class="flow-grid">
+      <div class="flow-step"><span class="flow-num">1</span><i class="bi bi-search"></i><h4>Browse Products</h4><small>Explore our full crockery &amp; tableware collection</small></div>
+      <div class="flow-step"><span class="flow-num">2</span><i class="bi bi-bag-plus"></i><h4>Add to Cart</h4><small>Select the items you'd like to order</small></div>
+      <div class="flow-step"><span class="flow-num">3</span><i class="bi bi-send-check"></i><h4>Place Order</h4><small>Submit your order — no price needed yet</small></div>
+      <div class="flow-step"><span class="flow-num">4</span><i class="bi bi-pencil-square"></i><h4>Admin Updates Price</h4><small>Our team reviews and prices your order</small></div>
+      <div class="flow-step"><span class="flow-num">5</span><i class="bi bi-eye"></i><h4>View Price in Account</h4><small>Log in to see your confirmed order price</small></div>
+      <div class="flow-step"><span class="flow-num">6</span><i class="bi bi-credit-card"></i><h4>Pay Online</h4><small>Complete payment securely from your account</small></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head center-head">
+      <span class="eyebrow">Why Choose Us</span>
+      <h2>Crafted for how you actually shop.</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card"><i class="bi bi-collection"></i><h3>Wide Product Collection</h3><p>From everyday dinnerware to gifting pieces, a range built for every home and occasion.</p></div>
+      <div class="why-card"><i class="bi bi-award"></i><h3>Quality Products</h3><p>Every piece is selected for its finish, durability and everyday elegance.</p></div>
+      <div class="why-card"><i class="bi bi-lightning-charge"></i><h3>Easy Order Process</h3><p>Browse, add to cart and place your order in just a few simple steps.</p></div>
+      <div class="why-card"><i class="bi bi-shield-lock"></i><h3>Secure Payment After Approval</h3><p>Pay confidently online, only once your order price has been confirmed.</p></div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;">
+    <div class="account-flow">
+      <div>
+        <span class="eyebrow">Your Account, Your Order</span>
+        <h2>Order first. Price comes to you next.</h2>
+        <p>Place your order without worrying about pricing upfront. Once our team reviews it, your price appears in your account — ready for a quick, secure payment.</p>
+        <a class="btn btn-dark" href="register.html">Create Your Account <i class="bi bi-arrow-right"></i></a>
       </div>
-      <div class="hero-side">
-        <a class="promo-tile" href="shop.html?cat=crockery"><img src="https://images.unsplash.com/photo-1610701596007-11502861dcfa?auto=format&fit=crop&w=1000&q=86" alt="Crockery collection"><div class="promo-copy"><span>CROCKERY</span><h3>Dinnerware for professional service</h3><a href="shop.html?cat=crockery">Shop crockery →</a></div></a>
-        <a class="promo-tile" href="shop.html?cat=glassware"><img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=1000&q=86" alt="Hospitality glassware"><div class="promo-copy"><span>GLASSWARE</span><h3>Built for everyday hospitality use</h3><a href="shop.html?cat=glassware">Shop glassware →</a></div></a>
+      <div class="account-steps">
+        <div class="account-step"><span class="step-dot">1</span><div><b>Place your order</b><span>Add products and submit your order — no price shown yet.</span></div></div>
+        <div class="account-step"><span class="step-dot">2</span><div><b>Price shared privately</b><span>Our team reviews and confirms your order price.</span></div></div>
+        <div class="account-step"><span class="step-dot">3</span><div><b>Log in &amp; pay easily</b><span>View your price in "My Orders" and pay securely online.</span></div></div>
       </div>
-    </div></section>
+    </div>
+  </section>
 
-    <section class="commerce-strip"><div class="container">
-      <div class="strip-item"><i class="bi bi-grid"></i><div><b>Wide Product Range</b><small>Back-of-house to table service</small></div></div>
-      <div class="strip-item"><i class="bi bi-building"></i><div><b>Business Buying</b><small>Restaurants, hotels & institutions</small></div></div>
-      <div class="strip-item"><i class="bi bi-shield-lock"></i><div><b>Private Pricing</b><small>Price after requirement review</small></div></div>
-      <div class="strip-item"><i class="bi bi-arrow-repeat"></i><div><b>Repeat Ordering</b><small>Track and reorder from My Orders</small></div></div>
-    </div></section>
+</main>
 
-    <section class="section"><div class="container">
-      <div class="section-head"><div><span>SHOP BY CATEGORY</span><h2>Start with what you need.</h2></div><a href="shop.html">View all categories <i class="bi bi-arrow-right"></i></a></div>
-      <div class="category-grid">
-        <a class="category-card" href="shop.html?cat=crockery"><div class="category-img"><img src="https://images.unsplash.com/photo-1610701596007-11502861dcfa?auto=format&fit=crop&w=700&q=84" alt="Dinnerware"></div><h3>Dinnerware</h3><small>Plates · bowls · serving pieces</small></a>
-        <a class="category-card" href="shop.html?cat=crockery"><div class="category-img"><img src="https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=700&q=84" alt="Serveware"></div><h3>Serveware</h3><small>Bowls · platters · service pieces</small></a>
-        <a class="category-card" href="shop.html?cat=glassware"><div class="category-img"><img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=700&q=84" alt="Glassware"></div><h3>Glassware</h3><small>Tumblers · stemware · beverageware</small></a>
-        <a class="category-card" href="shop.html?cat=catering"><div class="category-img"><img src="https://images.unsplash.com/photo-1746343365753-5ddd9f7f3994?auto=format&fit=crop&w=700&q=84" alt="Buffetware"></div><h3>Buffet & Catering</h3><small>Holding · display · service</small></a>
-        <a class="category-card" href="shop.html?cat=equipment"><div class="category-img"><img src="https://images.unsplash.com/photo-1671656200343-d2a322492223?auto=format&fit=crop&w=700&q=84" alt="Kitchen equipment"></div><h3>Kitchen Equipment</h3><small>Prep · cooking · wash</small></a>
-        <a class="category-card" href="#project"><div class="category-img"><img src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=700&q=84" alt="Hospitality project"></div><h3>Complete Setup</h3><small>Plan the full kitchen requirement</small></a>
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img src="assets/img/logo.svg" alt="Agarwal Crockery House">
+      <p>Premium crockery, glassware, serveware and kitchen essentials — browse and order online, with pricing confirmed by our team before you pay.</p>
+      <div class="footer-social">
+        <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
       </div>
-    </div></section>
+    </div>
+    <div class="footer-col">
+      <h4>Categories</h4>
+      <a href="shop.html?cat=dinner-sets">Dinner Sets</a>
+      <a href="shop.html?cat=plates-bowls">Plates &amp; Bowls</a>
+      <a href="shop.html?cat=glassware">Glassware</a>
+      <a href="shop.html?cat=serveware">Serveware</a>
+      <a href="shop.html?cat=kitchen">Kitchen Items</a>
+      <a href="shop.html?cat=gifts">Gift Collections</a>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <a href="shop.html">Shop All</a>
+      <a href="#how-it-works">How Ordering Works</a>
+      <a href="cart.html">Cart</a>
+      <a href="checkout.html">Checkout</a>
+    </div>
+    <div class="footer-col">
+      <h4>Account</h4>
+      <a href="login.html">Login</a>
+      <a href="register.html">Register</a>
+      <a href="orders.html">My Orders</a>
+      <a href="order-details.html">Order Status</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <ul class="footer-contact">
+        <li><i class="bi bi-geo-alt"></i><span>Sadar Bazaar, Delhi, India</span></li>
+        <li><i class="bi bi-telephone"></i><span>+91 98765 43210</span></li>
+        <li><i class="bi bi-envelope"></i><span>info@agarwalcrockery.com</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Agarwal Crockery House. All rights reserved.</span>
+    <div class="policies">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">Shipping Policy</a>
+      <a href="#">Returns &amp; Refunds</a>
+    </div>
+  </div>
+</footer>
 
-    <section class="section section-soft"><div class="container">
-      <div class="section-head"><div><span>POPULAR PRODUCTS</span><h2>Products businesses are shortlisting.</h2></div><a href="shop.html">Shop complete catalogue <i class="bi bi-arrow-right"></i></a></div>
-      <div class="category-pills"><a class="category-pill active" href="shop.html">All</a><a class="category-pill" href="shop.html?cat=crockery">Crockery</a><a class="category-pill" href="shop.html?cat=glassware">Glassware</a><a class="category-pill" href="shop.html?cat=catering">Buffet</a></div>
-      <div class="product-grid">
-        <article class="product-card" data-product-link><div class="product-media"><img src="https://images.unsplash.com/photo-1610701596007-11502861dcfa?auto=format&fit=crop&w=900&q=84" alt="Premium Porcelain Dinner Set"><span class="product-badge red">POPULAR</span><button class="wish" data-wish aria-label="Wishlist"><i class="bi bi-heart"></i></button></div><div class="product-body"><span class="product-category">DINNERWARE</span><h3 class="product-title">Premium Porcelain Dinner Set</h3><p class="product-sub">Commercial-grade tableware for restaurants, hotels and banquets.</p><div class="spec-row"><span class="spec-pill">Porcelain</span><span class="spec-pill">Restaurant Grade</span></div><div class="price-row"><span class="private-price"><i class="bi bi-lock"></i> Private price</span><button class="add-order" data-add-order>Add to Order <i class="bi bi-plus-lg"></i></button></div></div></article>
-        <article class="product-card" data-product-link><div class="product-media"><img src="https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=900&q=84" alt="Commercial Serve Bowl Set"><button class="wish" data-wish aria-label="Wishlist"><i class="bi bi-heart"></i></button></div><div class="product-body"><span class="product-category">SERVEWARE</span><h3 class="product-title">Commercial Serve Bowl Set</h3><p class="product-sub">Clean, durable service bowls for buffet and restaurant operations.</p><div class="spec-row"><span class="spec-pill">Serveware</span><span class="spec-pill">Daily Use</span></div><div class="price-row"><span class="private-price"><i class="bi bi-lock"></i> Private price</span><button class="add-order" data-add-order>Add to Order <i class="bi bi-plus-lg"></i></button></div></div></article>
-        <article class="product-card" data-product-link><div class="product-media"><img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=900&q=84" alt="Hospitality Water Tumbler Set"><span class="product-badge">NEW</span><button class="wish" data-wish aria-label="Wishlist"><i class="bi bi-heart"></i></button></div><div class="product-body"><span class="product-category">GLASSWARE</span><h3 class="product-title">Hospitality Water Tumbler Set</h3><p class="product-sub">Practical table glassware for high-volume hospitality service.</p><div class="spec-row"><span class="spec-pill">Glass</span><span class="spec-pill">Hospitality</span></div><div class="price-row"><span class="private-price"><i class="bi bi-lock"></i> Private price</span><button class="add-order" data-add-order>Add to Order <i class="bi bi-plus-lg"></i></button></div></div></article>
-        <article class="product-card" data-product-link><div class="product-media"><img src="https://images.unsplash.com/photo-1746343365753-5ddd9f7f3994?auto=format&fit=crop&w=900&q=84" alt="Buffet Service Collection"><button class="wish" data-wish aria-label="Wishlist"><i class="bi bi-heart"></i></button></div><div class="product-body"><span class="product-category">BUFFET SERVICE</span><h3 class="product-title">Buffet Service Collection</h3><p class="product-sub">Presentation and service pieces for buffet and catering requirements.</p><div class="spec-row"><span class="spec-pill">Buffet</span><span class="spec-pill">Commercial</span></div><div class="price-row"><span class="private-price"><i class="bi bi-lock"></i> Private price</span><button class="add-order" data-add-order>Add to Order <i class="bi bi-plus-lg"></i></button></div></div></article>
-      </div>
-    </div></section>
+<div class="toast-note" id="homeToast"><i class="bi bi-check-circle-fill"></i><span data-toast-text>Added to your order</span><a href="cart.html">View cart</a></div>
 
-    <section class="section"><div class="container"><div class="private-flow">
-      <div><span>AGARWAL PRIVATE PRICING</span><h2>It still works like ecommerce — only the price comes after review.</h2></div>
-      <div class="flow-steps"><div class="flow-step"><b>1. Shop</b><small>Add products</small></div><div class="flow-step"><b>2. Submit</b><small>Send order</small></div><div class="flow-step"><b>3. Review</b><small>Price confirmed</small></div><div class="flow-step"><b>4. Pay</b><small>Complete online</small></div></div>
-      <a class="btn-commerce" href="shop.html">Start Shopping</a>
-    </div></div></section>
-
-    <section class="section section-soft" id="project"><div class="container"><div class="project-banner">
-      <img src="https://images.unsplash.com/photo-1671656200343-d2a322492223?auto=format&fit=crop&w=1500&q=88" alt="Complete commercial kitchen project">
-      <div class="project-copy"><span>COMPLETE KITCHEN PROJECTS</span><h2>Need more than individual products?</h2><p>For a restaurant, hotel, cafe or institutional setup, share the complete requirement instead of selecting every item one by one.</p><div class="project-points"><div>✓ Requirement planning</div><div>✓ Equipment mix</div><div>✓ Product supply</div><div>✓ Installation support</div></div><a class="btn-commerce" href="mailto:info@example.com">Discuss Your Project <i class="bi bi-arrow-right"></i></a></div>
-    </div></div></section>
-
-    <section class="section" id="why"><div class="container"><div class="section-head"><div><span>BUILT FOR BUSINESS BUYERS</span><h2>Shop, reorder and manage requirements in one place.</h2></div><p>Direct buyers can shop immediately. Procurement teams can review formal orders. Repeat customers can return to My Orders and reorder.</p></div></div></section>
-  </main>
-
-  <footer class="site-footer"><div class="container footer-main">
-    <div><div class="footer-logo"><img src="assets/img/logo.svg" alt="Agarwal Crockery House"></div><p>Commercial kitchen equipment, crockery, glassware and hospitality supply for professional buyers.</p></div>
-    <div class="footer-col"><span>SHOP</span><a href="shop.html">All Products</a><a href="shop.html?cat=crockery">Crockery</a><a href="shop.html?cat=glassware">Glassware</a><a href="shop.html?cat=catering">Buffet & Catering</a></div>
-    <div class="footer-col"><span>ACCOUNT</span><a href="login.html">Login</a><a href="register.html">Register</a><a href="orders.html">My Orders</a><a href="cart.html">Order Basket</a></div>
-    <div class="footer-col"><span>BUSINESS</span><a href="#project">Complete Kitchen Projects</a><a href="#why">Why Agarwal</a><a href="checkout.html">Submit an Order</a></div>
-  </div><div class="container footer-bottom"><span>© 2026 Agarwal Crockery House</span><span>Privacy · Terms · Shipping · Returns</span></div></footer>
-
-  <div class="toast-note" id="commerceToast"><i class="bi bi-check-circle-fill"></i><span data-toast-text>Added to your order</span><a href="cart.html">View basket</a></div>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/js/ecommerce-v9.js"></script>
+<script src="assets/js/homepage.js"></script>
 </body>
 </html>
