@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>My Orders | Agarwal Crockery House</title>
+<title>Account Details | Agarwal Crockery House</title>
 <link rel="icon" href="assets/img/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,26 +29,14 @@
       <a class="icon-link" href="cart.html"><i class="bi bi-bag"></i><span class="label">Cart</span><span class="count" data-cart-count>0</span></a>
     </div>
   </div>
-  <nav class="category-nav">
-    <div class="category-nav-row">
-      <a href="shop.html">All Products</a>
-      <a href="shop.html?cat=dinner-sets">Dinner Sets</a>
-      <a href="shop.html?cat=plates-bowls">Plates &amp; Bowls</a>
-      <a href="shop.html?cat=glassware">Glassware</a>
-      <a href="shop.html?cat=serveware">Serveware</a>
-      <a href="shop.html?cat=kitchen">Kitchen Items</a>
-      <a href="shop.html?cat=gifts">Gift Collections</a>
-      <a class="pricing-link" href="index.html#how-it-works"><i class="bi bi-lock"></i> How Pricing Works</a>
-    </div>
-  </nav>
 </header>
 
 <div class="page-hero">
   <div class="container">
     <div>
-      <div class="breadcrumb"><a href="index.html">Home</a> / <a href="account.html">My Account</a> / My Orders</div>
-      <h1>My Orders</h1>
-      <p>Track every order you've placed. Once our team confirms your price, it appears here — ready for secure payment.</p>
+      <div class="breadcrumb"><a href="index.html">Home</a> / <a href="account.html">My Account</a> / Account Details</div>
+      <h1>Account Details</h1>
+      <p>Update your personal information.</p>
     </div>
   </div>
 </div>
@@ -58,32 +46,59 @@
     <aside class="account-sidebar">
       <div class="account-user">
         <div class="account-avatar">R</div>
-        <div>
-          <b>Riya Sharma</b>
-          <span>riya.sharma@email.com</span>
-        </div>
+        <div><b>Riya Sharma</b><span>riya.sharma@email.com</span></div>
       </div>
       <nav class="account-nav">
         <a href="account.html"><i class="bi bi-grid-1x2"></i> Dashboard</a>
-        <a href="orders.html" class="active"><i class="bi bi-receipt"></i> My Orders</a>
+        <a href="orders.html"><i class="bi bi-receipt"></i> My Orders</a>
         <a href="wishlist.html"><i class="bi bi-heart"></i> Wishlist</a>
         <a href="addresses.html"><i class="bi bi-geo-alt"></i> Saved Addresses</a>
-        <a href="account-details.html"><i class="bi bi-person-gear"></i> Account Details</a>
+        <a href="account-details.html" class="active"><i class="bi bi-person-gear"></i> Account Details</a>
         <a href="login.html" class="logout"><i class="bi bi-box-arrow-right"></i> Logout</a>
       </nav>
     </aside>
 
     <div class="account-main">
-      <div class="account-main-head">
-        <h1 style="font-size:20px;">All Orders</h1>
-        <p>A full history of everything you've ordered from Agarwal Crockery House.</p>
+      <div class="acct-panel">
+        <h3>Personal Information</h3>
+        <form id="detailsForm">
+          <div class="field-row">
+            <div class="field">
+              <label for="dName">Full Name</label>
+              <input type="text" id="dName" value="Riya Sharma">
+            </div>
+            <div class="field">
+              <label for="dPhone">Phone Number</label>
+              <input type="tel" id="dPhone" value="+91 98765 43210">
+            </div>
+          </div>
+          <div class="field">
+            <label for="dEmail">Email Address</label>
+            <input type="email" id="dEmail" value="riya.sharma@email.com">
+          </div>
+          <button type="submit" class="btn btn-dark">Save Changes <i class="bi bi-check2"></i></button>
+        </form>
       </div>
-      <div class="orders-table" id="ordersList"></div>
-      <div class="empty-state" id="ordersEmptyState">
-        <i class="bi bi-receipt"></i>
-        <h2>No orders yet</h2>
-        <p>Once you place an order, you'll be able to track its status and pricing here.</p>
-        <a class="btn btn-dark" href="shop.html">Start Shopping <i class="bi bi-arrow-right"></i></a>
+
+      <div class="acct-panel">
+        <h3>Change Password</h3>
+        <form id="passwordForm">
+          <div class="field">
+            <label for="dCurrentPwd">Current Password</label>
+            <input type="password" id="dCurrentPwd" placeholder="••••••••">
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="dNewPwd">New Password</label>
+              <input type="password" id="dNewPwd" placeholder="••••••••">
+            </div>
+            <div class="field">
+              <label for="dConfirmPwd">Confirm New Password</label>
+              <input type="password" id="dConfirmPwd" placeholder="••••••••">
+            </div>
+          </div>
+          <button type="submit" class="btn btn-outline">Update Password</button>
+        </form>
       </div>
     </div>
   </div>
@@ -95,14 +110,25 @@
     <div class="policies">
       <a href="index.html">Home</a>
       <a href="shop.html">Shop</a>
-      <a href="#">Privacy Policy</a>
-      <a href="#">Terms of Service</a>
+      <a href="orders.html">My Orders</a>
     </div>
   </div>
 </footer>
 
+<div class="toast-note" id="acToast"><i class="bi bi-check-circle-fill"></i><span data-toast-text>Saved successfully</span></div>
+
 <script src="assets/js/products.js"></script>
 <script src="assets/js/site.js"></script>
-<script src="assets/js/orders.js"></script>
+<script>
+  document.getElementById('detailsForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (window.ACShowToast) window.ACShowToast('Profile updated successfully');
+  });
+  document.getElementById('passwordForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (window.ACShowToast) window.ACShowToast('Password updated successfully');
+    this.reset();
+  });
+</script>
 </body>
 </html>
